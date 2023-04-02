@@ -9,7 +9,8 @@ return {
 	branch = 'v2.x',
 	keys = ',,',
 	config = function()
-		local HighlightGroups = require('nvim.utils.nvim.highlighting.highlight-groups')
+		local HighlightGroups =
+			require('nvim.utils.nvim.highlighting.highlight-groups')
 		local Highlighter = require('nvim.utils.nvim.highlighting.highlighter')
 		local ThemeManager = require('nvim.utils.nvim.theme.theme-manager')
 		local Variable = require('nvim.utils.nvim.variable')
@@ -51,7 +52,7 @@ return {
 					mappings = {
 						['o'] = 'open',
 						['e'] = 'none',
-						['<space>'] = 'none'
+						['<space>'] = false,
 					},
 					position = 'float',
 				},
