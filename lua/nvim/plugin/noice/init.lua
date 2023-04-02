@@ -1,7 +1,7 @@
 return {
 	'folke/noice.nvim',
 	event = 'VeryLazy',
-	version = '1.8.2',
+	version = '1.10.2',
 	dependencies = {
 		'MunifTanjim/nui.nvim',
 		'notify',
