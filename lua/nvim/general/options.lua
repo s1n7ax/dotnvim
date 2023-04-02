@@ -167,5 +167,5 @@ add_options({
 	-- assign unnamedplus register to clipboard
 	-- anything in the clipboard can be pasted directly
 	-- any yanked text will be copied to clipboard
-	--  clipboard = 'unnamedplus',
+	clipboard = 'unnamedplus',
 })
