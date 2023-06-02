@@ -4,9 +4,8 @@ return {
 	enabled = false,
 	config = function()
 		local ThemeManager = require('nvim.utils.nvim.theme.theme-manager')
-		local HighlightGroup = require(
-			'nvim.utils.nvim.highlighting.highlight-groups'
-		)
+		local HighlightGroup =
+			require('nvim.utils.nvim.highlighting.highlight-groups')
 		local Highlighter = require('nvim.utils.nvim.highlighting.highlighter')
 
 		local Theme = ThemeManager.get_theme()
