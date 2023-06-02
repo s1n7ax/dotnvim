@@ -45,6 +45,8 @@ return {
 				mappings = {
 					['[c'] = 'prev_git_modified',
 					[']c'] = 'next_git_modified',
+					['<esc>'] = 'revert_preview',
+					['<c-c>'] = 'close_window',
 				},
 			},
 			filesystem = {
