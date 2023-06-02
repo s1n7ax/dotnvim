@@ -6,7 +6,14 @@ return {
 		'<leader>hD',
 		{ '<leader>hd', mode = 'v' },
 	},
-	cmd = { 'DiffviewFileHistory', 'DiffviewFileHistory' },
+	cmd = {
+		'DiffviewOpen',
+		'DiffviewFileHistory',
+		'DiffviewToggleFiles',
+		'DiffviewFocusFiles',
+		'DiffviewRefresh',
+		'DiffviewLog',
+	},
 	config = function()
 		local wk = require('which-key')
 
