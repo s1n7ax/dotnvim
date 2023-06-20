@@ -21,6 +21,8 @@ local py_venv = proot('python-venv')
 local py_venv_bin = proot('python-venv', 'bin')
 local py_venv_zip = proot('virtualenv.pyz')
 
+local py_autopep8_bin = proot('python-venv', 'bin', 'autopep8')
+
 local node_venv = proot('node-venv')
 local node_venv_bin = proot('node-venv', 'bin')
 local node_venv_zip = proot('python-venv', 'bin', 'nodeenv')
@@ -75,6 +77,11 @@ end)
 nf(node_venv_zip, function()
 	info('Installing nodeenv')
 	s({ pip3, 'install', 'nodeenv' })
+end)
+
+nf(py_autopep8_bin, function()
+	info('Installing autopep8')
+	s({ pip3, 'install', 'autopep8' })
 end)
 
 nf(node, function()
