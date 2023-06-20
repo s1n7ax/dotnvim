@@ -43,7 +43,7 @@ function M.register_keymaps()
 	}, { mode = { 'i', 's' } })
 
 	wk.register({
-		['<leader><leader>tq'] = { M.refresh_snippets, '(Snippet) refresh' },
+		['<leader><leader>tt'] = { M.refresh_snippets, '(Snippet) refresh' },
 	})
 end
 
@@ -88,6 +88,8 @@ function M.change_choice(fallback_key)
 end
 
 function M.refresh_snippets()
+	print('refreshing snippets')
+
 	local module = require('nvim.utils.common.module')
 
 	module.unload_package('ts-utils')
@@ -97,6 +99,10 @@ function M.refresh_snippets()
 	ls.cleanup()
 
 	M.register_snippets()
+
+	-- just of testing snips
+	module.unload_package('nvim.plugin.luasnip.demo')
+	require('nvim.plugin.luasnip.demo')
 end
 
 return M
