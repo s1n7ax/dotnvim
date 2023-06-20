@@ -10,6 +10,10 @@ require('nvim-treesitter.configs').setup({
 		'comment',
 		'markdown',
 		'markdown_inline',
+		'bash',
+		'python',
+		'javascript',
+		'typescript',
 	},
 
 	highlight = {
