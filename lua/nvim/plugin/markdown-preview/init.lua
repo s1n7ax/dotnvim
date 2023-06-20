@@ -11,7 +11,6 @@ return {
 			mkdp_refresh_slow = false,
 			mkdp_command_for_global = false,
 			mkdp_open_to_the_world = false,
-			mkdp_browser = 'chromium',
 			mkdp_echo_preview_url = false,
 			mkdp_preview_options = { sync_scroll_type = 'middle' },
 			mkdp_filetypes = { 'markdown' },
