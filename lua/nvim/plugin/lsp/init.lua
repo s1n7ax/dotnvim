@@ -34,6 +34,7 @@ return {
 		require('nvim.plugin.lsp.java').setup()
 		require('nvim.plugin.lsp.rust.rust_tools').setup()
 		require('nvim.plugin.lsp.tsserver').setup()
+		require('nvim.plugin.lsp.python').setup()
 
 		-- setup LSes
 		require('mason').setup()
