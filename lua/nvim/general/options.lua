@@ -18,7 +18,7 @@ add_options({
 	--                              EDITOR                              --
 	----------------------------------------------------------------------
 	-- less animations more work
-	lazydraw = true,
+	--  lazydraw = true,
 
 	-- replace tab with spaces
 	expandtab = false,
