@@ -36,4 +36,18 @@ function M.setup(servers)
 	M.lsp_event:dispatch(LspEvent.END)
 end
 
+function M.get_client_name(event)
+	local client_id = event.data.client_id
+	local client = vim.lsp.get_client_by_id(client_id)
+
+	return client.name
+end
+
+function M.get_client(event)
+	local client_id = event.data.client_id
+	local client = vim.lsp.get_client_by_id(client_id)
+
+	return client
+end
+
 return M

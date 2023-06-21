@@ -27,9 +27,10 @@ return {
 		require('nvim.plugin.lsp.common.keymaps').setup()
 		require('nvim.plugin.lsp.common.server-start-notification').setup()
 		require('nvim.plugin.lsp.common.disable-semantic-tokens').setup()
+		require('nvim.plugin.lsp.common.inlay-hint')
 
 		-- lsp lang specific config
-		require('nvim.plugin.lsp.lua').setup()
+		require('nvim.plugin.lsp.lua')
 		require('nvim.plugin.lsp.emmet').setup()
 		require('nvim.plugin.lsp.java').setup()
 		require('nvim.plugin.lsp.rust.rust_tools').setup()

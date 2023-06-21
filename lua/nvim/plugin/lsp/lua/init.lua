@@ -1,12 +1,15 @@
-local Lsp = require('nvim.utils.lsp')
-local LspEventType = require('nvim.utils.lsp.event')
+local lsp_util = require('nvim.utils.lsp')
 
-local M = {}
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(ev)
+		local client = lsp_util.get_client(ev)
 
-function M.setup()
-	Lsp.add_listener(LspEventType.SERVER_SETUP, function(ls, conf)
-		if ls == 'lua_ls' then
-			conf:set_option('settings', {
+		if client.name ~= 'lua_ls' then
+			return
+		end
+
+		client.config = vim.tbl_deep_extend('force', client.config, {
+			settings = {
 				Lua = {
 					diagnostics = {
 						globals = { 'vim', 'describe', 'it' },
@@ -20,6 +23,7 @@ function M.setup()
 						displayContext = 1,
 					},
 					hint = {
+						enable = true,
 						arrayIndex = 'Enable',
 						setType = true,
 					},
@@ -35,9 +39,7 @@ function M.setup()
 						enable = false,
 					},
 				},
-			})
-		end
-	end)
-end
-
-return M
+			},
+		})
+	end,
+})
