@@ -23,7 +23,7 @@ function M.setup()
 				name = i(1, 'M'),
 			},
 		}),
-		s('v', lua.choices.variable()),
+		s('v', lua.dynamic.variable()),
 
 		s('faa', lua.primitives.anonymous_func()),
 		s('fa', lua.primitives.noarg_anonymous_func()),
