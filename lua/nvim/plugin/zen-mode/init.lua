@@ -3,17 +3,12 @@ return {
 	keys = ',a',
 	config = function()
 		local wk = require('which-key')
-		local laststatus = vim.o.laststatus
 
 		require('zen-mode').setup({
-			on_open = function()
-				laststatus = vim.o.laststatus
-				vim.o.laststatus = 0
-			end,
-			-- callback where you can add custom code when the Zen window closes
-			on_close = function()
-				vim.laststatus = laststatus
-			end,
+			window = {
+				width = 70,
+				height = 1,
+			},
 		})
 
 		wk.register({
