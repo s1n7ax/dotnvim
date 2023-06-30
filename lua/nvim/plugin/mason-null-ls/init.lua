@@ -18,7 +18,7 @@ return {
 			'editorconfig-checker',
 
 			-- debuggers
-			'debugpy'
+			'debugpy',
 		},
 	},
 }

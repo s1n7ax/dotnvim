@@ -23,9 +23,8 @@ return {
 				diagnostics.luacheck,
 				diagnostics.markdownlint,
 				diagnostics.editorconfig_checker.with({
-					command = 'editorconfig-checker'
-				})
-
+					command = 'editorconfig-checker',
+				}),
 
 				-- diagnostics
 				-- diagnostics.cspell.with({
