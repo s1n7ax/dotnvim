@@ -6,7 +6,7 @@ return {
 
 		require('zen-mode').setup({
 			window = {
-				width = 70,
+				width = 90,
 				height = 1,
 			},
 		})
