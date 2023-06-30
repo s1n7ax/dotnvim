@@ -2,6 +2,7 @@ return {
 	'nvim-telescope/telescope.nvim',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
+		'nvim-telescope/telescope-ui-select.nvim',
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 	},
 	cmd = 'Telescope',
@@ -12,7 +13,7 @@ return {
 		'<leader>ni',
 		'<leader>ns',
 		'<leader>no',
-		{ '<c-r>', mode = 'i' }
+		{ '<c-r>', mode = 'i' },
 	},
 	config = function()
 		local telescope = require('telescope')
@@ -51,6 +52,7 @@ return {
 
 		-- load plugins
 		telescope.load_extension('fzf')
+		telescope.load_extension('ui-select')
 
 		-- load other configurations
 		require('nvim.plugin.telescope.keymaps')
