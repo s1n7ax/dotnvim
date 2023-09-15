@@ -1,3 +1,5 @@
+# This is no longer maintained and I have switched to AstroNvim. So if anyone interested, here is my [AstroNvim config](https://github.com/s1n7ax/astronvim-dotnvim)
+
 # dotnvim
 
 100% lua neovim configuration
