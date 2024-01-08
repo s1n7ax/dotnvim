@@ -1,8 +1,6 @@
 return {
 	'williamboman/mason.nvim',
 	opts = {
-		ensure_installed = {
-			'jsonls',
-		},
+		ensure_installed = {},
 	},
 }
