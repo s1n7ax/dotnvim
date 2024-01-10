@@ -1,8 +1,16 @@
+local pkg_bin_map = {}
+
+local function binary_available(pkg)
+	local binary_name = pkg_bin_map[pkg] and pkg_bin_map[pkg] or pkg
+	vim.print(vim.fn.executable(binary_name))
+	return vim.fn.executable(binary_name) ~= 1
+end
+
 return {
 	'williamboman/mason.nvim',
 	opts = function(_, opts)
-		opts.ensure_installed = vim.tbl_filter(function(value)
-			return value ~= 'stylua' and value ~= 'shfmt'
+		opts.ensure_installed = vim.tbl_filter(function(pkg)
+			return binary_available(pkg)
 		end, opts.ensure_installed)
 
 		return opts
