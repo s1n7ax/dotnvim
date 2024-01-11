@@ -3,4 +3,5 @@ vim.opt.listchars = {
 	tab = '> ',
 }
 
-vim.opt.pumblend = 0
+vim.o.pumblend = 0
+vim.o.hlsearch = false
