@@ -9,6 +9,9 @@ return {
 				marksman = {
 					mason = false,
 				},
+				nil_ls = {
+					mason = false,
+				},
 			},
 		},
 	},
