@@ -27,7 +27,7 @@ wk.register({
 --                             Editing                              --
 ----------------------------------------------------------------------
 wk.register({
-	['[<space>'] = {
+	['[<leader>'] = {
 		function()
 			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
 			local prev_line = curr_line - 1
@@ -36,7 +36,7 @@ wk.register({
 		end,
 		'Add line above',
 	},
-	[']<space>'] = {
+	[']<leader>'] = {
 		function()
 			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
 			vim.api.nvim_buf_set_lines(0, curr_line, curr_line, true, { '' })
@@ -47,6 +47,7 @@ wk.register({
 
 	['<C-s>'] = { '<cmd>silent w<cr>', 'Save' },
 	['<C-q>'] = { '<cmd>confirm q<cr>', 'Quit' },
+	['<leader><cr>'] = { 'a<cr><esc>', 'Line Break' },
 })
 
 ----------------------------------------------------------------------
