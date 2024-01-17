@@ -2,7 +2,6 @@ local pkg_bin_map = {}
 
 local function binary_available(pkg)
 	local binary_name = pkg_bin_map[pkg] and pkg_bin_map[pkg] or pkg
-	vim.print(vim.fn.executable(binary_name))
 	return vim.fn.executable(binary_name) ~= 1
 end
 
