@@ -5,7 +5,6 @@ function M.setup()
 	local lua = require('snips.lua')
 	local common = require('snips.common')
 	local s = ls.s
-	local i = ls.insert_node
 	local postfix = require('luasnip.extras.postfix').postfix
 
 	ls.add_snippets('lua', {
