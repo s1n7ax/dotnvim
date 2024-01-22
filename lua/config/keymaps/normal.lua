@@ -49,6 +49,32 @@ wk.register({
 	['<C-q>'] = { '<cmd>confirm q<cr>', 'Quit' },
 	['<leader><cr>'] = { 'a<cr><esc>', 'Line Break' },
 	['<leader>p'] = { 'a <esc>p', 'Paste After a Space' },
+	['<leader>ij'] = {
+		function()
+			local ignore_list = { 'a', 'an', 'the', 'in', 'at' }
+			local line = vim.api.nvim_get_current_line()
+			local words = vim.split(line, ' ')
+
+			local new_words = {}
+
+			for _, word in ipairs(words) do
+				if vim.tbl_contains(ignore_list, word) then
+					table.insert(new_words, word)
+					goto continue
+				end
+				local first_char = word:sub(1, 1)
+				local rest = word:sub(2)
+
+				table.insert(new_words, first_char:upper() .. rest)
+
+				::continue::
+			end
+
+			local new_line = table.concat(new_words, ' ')
+			vim.api.nvim_set_current_line(new_line)
+		end,
+		'Pascal Case',
+	},
 })
 
 ----------------------------------------------------------------------
