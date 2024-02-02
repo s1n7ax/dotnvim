@@ -16,7 +16,11 @@ return {
 		{
 			'nvim-java/nvim-java',
 			dir = f('~/Workspace/nvim-java'),
-			opts = {},
+			opts = {
+				jdk = {
+					auto_install = false,
+				},
+			},
 			dependencies = {
 				{
 					'nvim-java/lua-async-await',
