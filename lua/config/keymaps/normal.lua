@@ -47,6 +47,7 @@ wk.register({
 
 	['<C-s>'] = { '<cmd>silent w<cr>', 'Save' },
 	['<C-q>'] = { '<cmd>confirm q<cr>', 'Quit' },
+	['x'] = { '"_x', 'Delete Character' },
 	['<leader><cr>'] = { 'a<cr><esc>', 'Line Break' },
 	['<leader>p'] = { 'a <esc>p', 'Paste After a Space' },
 	['<leader>ij'] = {
