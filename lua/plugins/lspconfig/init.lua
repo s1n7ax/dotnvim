@@ -13,19 +13,45 @@ local ls_to_exec_map = {
 	taplo = 'taplo',
 	tsserver = 'tsserver',
 	yamlls = 'yaml-language-server',
-	hadolint = 'hadolint',
+	emmet_language_server = 'emmet-language-server',
 }
 
 return {
 	{
 		'neovim/nvim-lspconfig',
 		opts = function(_, opts)
-			for server, _ in pairs(opts.servers) do
-				local exec = ls_to_exec_map[server]
+			-- disable installation from mason if the executable is available in the
+			-- systemt already
+			for server, exec_name in pairs(ls_to_exec_map) do
+				-- if the server config not found, enable the server
+				if not opts.servers[server] then
+					opts.servers[server] = {}
+				end
 
-				if exec and vim.fn.executable(exec) then
+				if vim.fn.executable(exec_name) then
 					opts.servers[server].mason = false
 				end
+			end
+
+			-- opts.servers.emmet_language_server.filetypes = { 'rust' }
+
+			-- changes in the default config
+			opts.setup.emmet_language_server = function(_, config)
+				local filetypes =
+					require('lspconfig').emmet_language_server.document_config.default_config.filetypes
+
+				table.insert(filetypes, 'rust')
+
+				config.filetypes = filetypes
+			end
+
+			opts.setup.tailwindcss = function(_, config)
+				local filetypes =
+					require('lspconfig').tailwindcss.document_config.default_config.filetypes
+
+				table.insert(filetypes, 'rust')
+
+				config.filetypes = filetypes
 			end
 
 			return opts
