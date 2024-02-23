@@ -29,7 +29,10 @@
         "~/.config/nvim/lua"
       ],
       "Lua.workspace.checkThirdParty": true,
-      "Lua.workspace.ignoreSubmodules": false
+      "Lua.workspace.ignoreSubmodules": false,
+      "Lua.workspace.maxPreload": 10000,
+      "Lua.workspace.preloadFileSize": 10000,
+      "Lua.format.enable": false
     }
   }
 }
