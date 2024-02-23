@@ -10,6 +10,9 @@
   },
   "neoconf": {
     "plugins": {
+      "jsonls": {
+        "enabled": true
+      },
       "lua_ls": {
         "enabled": true
       }
@@ -33,6 +36,9 @@
       "Lua.workspace.maxPreload": 10000,
       "Lua.workspace.preloadFileSize": 10000,
       "Lua.format.enable": false
+    },
+    "jsonls": {
+      "json.format.enable": false
     }
   }
 }
