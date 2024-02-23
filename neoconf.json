@@ -1,0 +1,35 @@
+{
+  "neodev": {
+    "library": {
+      "enabled": true,
+      "plugins": [
+        "nvim-lspconfig",
+        "lsp"
+      ]
+    }
+  },
+  "neoconf": {
+    "plugins": {
+      "lua_ls": {
+        "enabled": true
+      }
+    }
+  },
+  "lspconfig": {
+    "lua_ls": {
+      "Lua.completion.callSnippet": "Replace",
+      "Lua.diagnostics.globals": [
+        "vim",
+        "describe",
+        "it",
+        "assert"
+      ],
+      "Lua.runtime.version": "LuaJIT",
+      "Lua.workspace.library": [
+        "~/.config/nvim/lua"
+      ],
+      "Lua.workspace.checkThirdParty": true,
+      "Lua.workspace.ignoreSubmodules": false
+    }
+  }
+}
