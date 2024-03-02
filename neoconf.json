@@ -2,10 +2,7 @@
   "neodev": {
     "library": {
       "enabled": true,
-      "plugins": [
-        "nvim-lspconfig",
-        "lsp"
-      ]
+      "plugins": true
     }
   },
   "neoconf": {
@@ -15,27 +12,21 @@
       },
       "lua_ls": {
         "enabled": true
+      },
+      "jdtls": {
+        "enabled": true
       }
     }
   },
   "lspconfig": {
     "lua_ls": {
-      "Lua.completion.callSnippet": "Replace",
-      "Lua.diagnostics.globals": [
-        "vim",
-        "describe",
-        "it",
-        "assert"
-      ],
-      "Lua.runtime.version": "LuaJIT",
-      "Lua.workspace.library": [
-        "~/.config/nvim/lua"
-      ],
-      "Lua.workspace.checkThirdParty": true,
-      "Lua.workspace.ignoreSubmodules": false,
-      "Lua.workspace.maxPreload": 10000,
-      "Lua.workspace.preloadFileSize": 10000,
-      "Lua.format.enable": false
+      "Lua.format.enable": false,
+      "Lua.semantic.enable": false,
+      "Lua.workspace": {
+        "maxPreload": 10000,
+        "preloadFileSize": 10000
+      },
+      "Lua.telemetry": false
     },
     "jsonls": {
       "json.format.enable": false
