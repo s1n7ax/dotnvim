@@ -1,6 +1,9 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	opts = function(_, opts)
+	keys = function()
+		return {}
+	end,
+	opts = function()
 		return {
 			defaults = {
 				-- Default configuration for telescope goes here:
