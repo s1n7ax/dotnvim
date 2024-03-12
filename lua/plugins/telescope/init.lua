@@ -1,7 +1,46 @@
+local rg_glob_list = {
+	'!.git/',
+	'!node_modules/',
+	'!target/',
+	'!sass_cache/',
+}
+
+local rg_cmd = {
+	'rg',
+	'--no-ignore',
+	'--hidden',
+	'--files',
+}
+
+if #rg_cmd ~= 0 then
+	for _, ignore_item in ipairs(rg_glob_list) do
+		table.insert(rg_cmd, '--glob=' .. ignore_item)
+	end
+end
+
 return {
 	'nvim-telescope/telescope.nvim',
 	keys = function()
-		return {}
+		return {
+			{
+				',,',
+				function()
+					require('telescope.builtin').find_files({
+						find_command = rg_cmd,
+					})
+				end,
+				desc = 'Find Files',
+			},
+			{
+				'<leader>/',
+				function()
+					require('telescope.builtin').live_grep({
+						glob_pattern = rg_glob_list,
+					})
+				end,
+				desc = 'Find Word',
+			},
+		}
 	end,
 	opts = function()
 		return {
