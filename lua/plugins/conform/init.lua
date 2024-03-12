@@ -1,6 +1,6 @@
 return {
 	'stevearc/conform.nvim',
-	enable = false,
+	enabled = false,
 	opts = {
 		formatters_by_ft = {
 			fish = {},
