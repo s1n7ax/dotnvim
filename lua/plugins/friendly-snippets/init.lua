@@ -1,4 +1,4 @@
 return {
 	'rafamadriz/friendly-snippets',
-	enable = false,
+	enabled = false,
 }
