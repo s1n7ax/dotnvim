@@ -11,7 +11,7 @@ local ls_to_exec_map = {
 	ruff_lsp = 'ruff-lsp',
 	tailwindcss = 'tailwindcss-language-server',
 	taplo = 'taplo',
-	tsserver = 'tsserver',
+	tsserver = 'typescript-language-server',
 	yamlls = 'yaml-language-server',
 	emmet_language_server = 'emmet-language-server',
 }
