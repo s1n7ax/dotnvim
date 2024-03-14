@@ -3,6 +3,7 @@ local rg_glob_list = {
 	'!node_modules/',
 	'!target/',
 	'!sass_cache/',
+	'!dist',
 }
 
 local rg_cmd = {
@@ -36,6 +37,10 @@ return {
 				function()
 					require('telescope.builtin').live_grep({
 						glob_pattern = rg_glob_list,
+						additional_args = {
+							'--no-ignore',
+							'--hidden',
+						},
 					})
 				end,
 				desc = 'Find Word',
