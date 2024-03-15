@@ -4,7 +4,7 @@ local wk = require('which-key')
 -- L -> E -> K -> N -> J -> M -> H -> I -> L
 wk.register({
 	m = { '<left>', 'Left' },
-	M = { 'H', 'Top line of window' },
+	-- M = { 'H', 'Top line of window' },
 
 	h = { 'i', 'Insert' },
 	H = { 'I', 'Insert at line start' },
@@ -26,10 +26,10 @@ wk.register({
 	L = { 'E', 'Last char before white space' },
 
 	i = { '<right>', 'Right' },
-	I = { 'L', 'Last line of window' },
+	-- I = { 'L', 'Last line of window' },
 
 	j = { 'm', 'Create mark' },
-	J = { 'M', 'Middle line of window' },
+	-- J = { 'M', 'Middle line of window' },
 
 	['<c-l>'] = { '<c-i>', 'Jump to previous jump point' },
 }, {
