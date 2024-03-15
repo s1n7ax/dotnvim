@@ -6,7 +6,6 @@ local M = {}
 M.languages = {
 	'lua',
 	'javascript',
-	'javascriptreact',
 	'yaml',
 	'java',
 	'rust',

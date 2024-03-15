@@ -1,3 +1,5 @@
+local tbl = require('utils.table')
+
 local M = {}
 
 function M.setup()
@@ -5,13 +7,14 @@ function M.setup()
 	local common = require('snips.common')
 	local js = require('snips.javascript')
 	local ts = require('snips.typescript')
+	local jsr = require('snips.javascriptreact')
 
 	local s = ls.s
 	local i = ls.insert_node
 
-	local js_snippets = function()
+	local common_snip = function()
 		return {
-			s('c', js.primitives.class()),
+			s('cls', js.primitives.class()),
 			s('con', js.primitives.constructor()),
 			s('r', common.primitives.returns()),
 			s('des', js.primitives.describe()),
@@ -20,14 +23,13 @@ function M.setup()
 
 			s('fa', js.choices.anonymous_func()),
 
-			s('v', js.choices.variable()),
-			s('i', js.choices.stdout(), {
+			s('o', js.choices.stdout(), {
 				stored = {
 					value = i(1, 'value'),
 				},
 			}),
 
-			s('f', js.dynamic.func(), {
+			s('fun', js.dynamic.func(), {
 				stored = {
 					name = i(1, 'name'),
 					param = i(1),
@@ -37,26 +39,49 @@ function M.setup()
 		}
 	end
 
-	local ts_snippets = function()
-		return {
-			s('int', ts.primitives.interface()),
-			s('enum', ts.primitives.enum()),
-
-			s('v', ts.choices.variable()),
+	local js_snip = function()
+		local snips = {
+			s('v', js.choices.variable()),
 		}
+
+		return tbl.concat(common_snip(), snips)
 	end
 
-	ls.add_snippets('javascript', js_snippets())
-	ls.add_snippets(
-		'typescript',
-		vim.tbl_extend('force', js_snippets(), ts_snippets())
-	)
+	local ts_snip = function()
+		local snips = {
+			s('int', ts.primitives.interface()),
+			s('enum', ts.primitives.enum()),
+			s('v', ts.choices.variable()),
+		}
 
-	ls.add_snippets('javascriptreact', js_snippets())
-	ls.add_snippets(
-		'typescriptreact',
-		vim.tbl_extend('force', js_snippets(), ts_snippets())
-	)
+		return tbl.concat(common_snip(), snips)
+	end
+
+	local jsx_snip = function()
+		local snips = {
+			s('cmp', jsr.primitives.component()),
+			s('hs', jsr.primitives.use_state()),
+			s('he', jsr.primitives.use_effect()),
+		}
+
+		return tbl.concat(js_snip(), snips)
+	end
+
+	local tsx_snip = function()
+		local snips = {
+			s('cmp', jsr.primitives.component()),
+			s('hs', jsr.primitives.use_state()),
+			s('he', jsr.primitives.use_effect()),
+		}
+
+		return tbl.concat(ts_snip(), snips)
+	end
+
+	ls.add_snippets('javascript', js_snip())
+	ls.add_snippets('typescript', ts_snip())
+
+	ls.add_snippets('javascriptreact', jsx_snip())
+	ls.add_snippets('typescriptreact', tsx_snip())
 end
 
 return M
