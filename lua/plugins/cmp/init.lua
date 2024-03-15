@@ -49,6 +49,8 @@ return {
 	opts = function(_, opts)
 		local cmp = require('cmp')
 
+		opts.experimental.ghost_text = false
+
 		opts.mapping = {
 			['<C-e>'] = cmp.mapping.select_prev_item({
 				behavior = cmp.SelectBehavior.Insert,
@@ -78,6 +80,7 @@ return {
 				side_padding = 0,
 			},
 		}
+
 		opts.formatting = {
 			fields = { 'kind', 'abbr', 'menu' },
 			format = function(entry, vim_item)
@@ -93,6 +96,7 @@ return {
 			end,
 		}
 		opts.sources = {
+
 			{
 				name = 'nvim_lsp_signature_help',
 				priority = 100,
