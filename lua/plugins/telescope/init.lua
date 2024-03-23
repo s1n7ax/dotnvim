@@ -4,8 +4,8 @@ local rg_glob_list = {
 	'!target/',
 	'!sass_cache/',
 	'!dist',
-	'!.next'
-	'!.pnpm-store'
+	'!.next',
+	'!.pnpm-store',
 }
 
 local rg_cmd = {
