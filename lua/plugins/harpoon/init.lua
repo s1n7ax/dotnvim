@@ -1,28 +1,55 @@
-local add_file = function()
-	require('harpoon.mark').add_file()
-end
-
-local toggle_ui = function()
-	require('harpoon.ui').toggle_quick_menu()
-end
-
-local nav = function(index)
-	return function()
-		require('harpoon.ui').nav_file(index)
-	end
-end
-
 return {
 	'ThePrimeagen/harpoon',
-	event = 'VeryLazy',
-	dependencies = { 'nvim-lua/plenary.nvim' },
 	keys = {
-		{ ',l', mode = 'n', add_file, desc = 'Harpoon Add File' },
-		{ ',L', mode = 'n', toggle_ui, desc = 'Harpoon Toggle UI' },
-		{ '<c-1>', mode = 'n', nav(1), desc = 'Harpoon Jump to 1st' },
-		{ '<c-2>', mode = 'n', nav(2), desc = 'Harpoon Jump to 2nd' },
-		{ '<c-3>', mode = 'n', nav(3), desc = 'Harpoon Jump to 3rd' },
-		{ '<c-4>', mode = 'n', nav(4), desc = 'Harpoon Jump to 4rd' },
+		{
+			',l',
+			function()
+				require('harpoon'):list():append()
+			end,
+			desc = 'Harpoon file',
+		},
+		{
+			',L',
+			function()
+				local harpoon = require('harpoon')
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end,
+			desc = 'Harpoon quick menu',
+		},
+		{
+			'<c-1>',
+			function()
+				require('harpoon'):list():select(1)
+			end,
+			desc = 'Harpoon to file 1',
+		},
+		{
+			'<c-2>',
+			function()
+				require('harpoon'):list():select(2)
+			end,
+			desc = 'Harpoon to file 2',
+		},
+		{
+			'<c-3>',
+			function()
+				require('harpoon'):list():select(3)
+			end,
+			desc = 'Harpoon to file 3',
+		},
+		{
+			'<c-4>',
+			function()
+				require('harpoon'):list():select(4)
+			end,
+			desc = 'Harpoon to file 4',
+		},
+		{
+			'<c-5>',
+			function()
+				require('harpoon'):list():select(5)
+			end,
+			desc = 'Harpoon to file 5',
+		},
 	},
-	config = true,
 }
