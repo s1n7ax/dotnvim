@@ -35,6 +35,15 @@ return {
 				desc = 'Find Files',
 			},
 			{
+				'<leader>n',
+				function()
+					require('neo-tree.command').execute({
+						source = 'buffers',
+						toggle = true,
+					})
+				end,
+			},
+			{
 				'<leader>/',
 				function()
 					require('telescope.builtin').live_grep({
