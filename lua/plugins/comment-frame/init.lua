@@ -5,7 +5,7 @@ return {
 	},
 	keys = {
 		{
-			'<leader>cc',
+			'<leader><leader>c',
 			function()
 				require('nvim-comment-frame').add_comment()
 			end,
