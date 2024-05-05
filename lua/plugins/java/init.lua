@@ -38,6 +38,10 @@ return {
 					'nvim-java/nvim-java-dap',
 					dir = f('~/Workspace/nvim-java-dap'),
 				},
+				{
+					'nvim-java/nvim-java-refactor',
+					dir = f('~/Workspace/nvim-java-refactor'),
+				},
 				'MunifTanjim/nui.nvim',
 				'neovim/nvim-lspconfig',
 				'mfussenegger/nvim-dap',
