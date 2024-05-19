@@ -1,4 +1,5 @@
 local ls_to_exec_map = {
+	cssls = 'vscode-css-language-server',
 	jsonls = 'vscode-json-language-server',
 	lua_ls = 'lua-language-server',
 	marksman = 'marksman',
