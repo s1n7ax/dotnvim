@@ -15,6 +15,9 @@
       },
       "jdtls": {
         "enabled": true
+      },
+      "cssls": {
+        "enabled": true
       }
     }
   },
