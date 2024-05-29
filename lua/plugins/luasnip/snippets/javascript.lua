@@ -60,8 +60,8 @@ function M.setup()
 	local jsx_snip = function()
 		local snips = {
 			s('cmp', jsr.primitives.component()),
-			s('hs', jsr.primitives.use_state()),
-			s('he', jsr.primitives.use_effect()),
+			s('us', jsr.primitives.use_state()),
+			s('ue', jsr.primitives.use_effect()),
 		}
 
 		return tbl.concat(js_snip(), snips)
@@ -69,6 +69,8 @@ function M.setup()
 
 	local tsx_snip = function()
 		local snips = {
+			s('prop', jsr.dynamic.component_props()),
+
 			s('cmp', jsr.primitives.component()),
 			s('hs', jsr.primitives.use_state()),
 			s('he', jsr.primitives.use_effect()),
