@@ -15,6 +15,7 @@ return {
 			['<C-v>'] = 'actions.select_vsplit',
 			['<C-x>'] = 'actions.select_split',
 		},
+		skip_confirm_for_simple_edits = true,
 	},
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 }
