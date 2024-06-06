@@ -20,6 +20,9 @@ return {
 				jdk = {
 					auto_install = false,
 				},
+				notifications = {
+					dap = false,
+				},
 			},
 			dependencies = {
 				{
