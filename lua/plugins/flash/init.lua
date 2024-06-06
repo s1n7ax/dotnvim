@@ -5,9 +5,6 @@ local flash = function(func_name)
 end
 
 local keys = {
-	'<cr>',
-	-- { '<CR>', mode = { 'n', 'x', 'o' }, flash('jump'), desc = 'Flash' },
-	-- { '<c-c>', mode = { 'c' }, flash('toggle'), desc = 'Toggle Flash Search' },
 	{ 'r', mode = 'o', flash('remote'), desc = 'Remote Flash' },
 	{
 		'S',
