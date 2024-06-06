@@ -6,8 +6,7 @@ local M = {}
 
 function M.register_snippets()
 	for _, language in ipairs(config.languages) do
-		local module_path =
-			string.format('plugins.luasnip.snippets.%s', language)
+		local module_path = string.format('plugins.luasnip.snippets.%s', language)
 
 		local ok, snip = pcall(require, module_path)
 
@@ -45,18 +44,10 @@ function M.expand_or_jump(--[[_fallback_key]])
 	return function()
 		if ls.expand_or_jumpable() then
 			ls.expand_or_jump()
+		elseif vim.snippet.active({ direction = 1 }) then
+			return vim.snippet.jump(1)
 		else
 			-- vim.api.nvim_input(fallback_key)
-		end
-	end
-end
-
-function M.jump_next(fallback_key)
-	return function()
-		if ls.jumpable(1) then
-			ls.jump(1)
-		else
-			vim.api.nvim_input(fallback_key)
 		end
 	end
 end
@@ -65,6 +56,8 @@ function M.jump_prev(fallback_key)
 	return function()
 		if ls.jumpable(-1) then
 			ls.jump(-1)
+		elseif vim.snippet.active({ direction = -1 }) then
+			return vim.snippet.jump(-1)
 		else
 			vim.api.nvim_input(fallback_key)
 		end
