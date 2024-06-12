@@ -28,19 +28,23 @@ return {
 			{
 				',,',
 				function()
-					require('telescope.builtin').find_files({
-						find_command = rg_cmd,
-					})
+					require('telescope.builtin').find_files()
 				end,
 				desc = 'Find Files',
 			},
 			{
+				',.',
+				function()
+					require('telescope.builtin').find_files({
+						find_command = rg_cmd,
+					})
+				end,
+				desc = 'Find All Files',
+			},
+			{
 				'<leader>n',
 				function()
-					require('neo-tree.command').execute({
-						source = 'buffers',
-						toggle = true,
-					})
+					require('telescope.builtin').buffers()
 				end,
 			},
 			{
