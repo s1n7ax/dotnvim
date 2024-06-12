@@ -4,7 +4,6 @@ local ls_to_exec_map = {
 	lua_ls = 'lua-language-server',
 	marksman = 'marksman',
 	nil_ls = 'nil',
-	rust_analyzer = 'rust-analyzer',
 	docker_compose_language_service = 'docker-compose-langserver',
 	dockerls = 'docker-langserver',
 	eslint = 'vscode-eslint-language-server',
