@@ -17,7 +17,7 @@ wk.register({
 	N = { 'J', 'Join below line' },
 
 	k = { 'n', 'Find next' },
-	K = { 'N', 'Find previous' },
+	-- K = { 'N', 'Find previous' },
 
 	e = { [[(v:count > 1 ? "m'" . v:count : '') . '<up>']], 'Up', expr = true },
 	E = { 'K', 'Keyword lookup' },
@@ -26,7 +26,7 @@ wk.register({
 	L = { 'E', 'Last char before white space' },
 
 	i = { '<right>', 'Right' },
-	-- I = { 'L', 'Last line of window' },
+	I = { 'N', 'Last line of window' },
 
 	j = { 'm', 'Create mark' },
 	-- J = { 'M', 'Middle line of window' },
