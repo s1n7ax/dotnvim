@@ -1,23 +1,32 @@
 return {
 	'nvim-neo-tree/neo-tree.nvim',
-	enabled = true,
+	branch = 'v3.x',
+	dependencies = {
+		'nvim-lua/plenary.nvim',
+		'nvim-tree/nvim-web-devicons',
+		'MunifTanjim/nui.nvim',
+	},
 	keys = {
 		{
 			'<leader>e',
-			':Neotree reveal<cr>',
+			function()
+				require('neo-tree.command')._command('toggle')
+			end,
 			desc = 'Reveal NeoTree (curren buffer)',
 		},
 	},
 	opts = {
 		window = {
 			mappings = { e = 'none' },
-			position = 'float',
+			position = 'current',
 		},
 		filesystem = {
 			window = {
 				mappings = {
 					['/'] = 'noop',
 					['z'] = 'noop',
+					['<c-x>'] = 'open_split',
+					['<c-v>'] = 'open_vsplit',
 				},
 			},
 		},
