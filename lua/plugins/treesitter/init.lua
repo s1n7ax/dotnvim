@@ -45,6 +45,9 @@ return {
 				node_decremental = ',e',
 			},
 		},
+		indent = {
+			enable = false,
+		},
 
 		textobjects = {
 			select = {
