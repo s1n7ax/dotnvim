@@ -1,13 +1,24 @@
 return {
-	'phaazon/hop.nvim',
-	branch = 'v2',
+	'smoka7/hop.nvim',
 	keys = function()
 		return {
-			{ '<CR>', '<CMD>HopWord<CR>', 'Hop to word' },
-			{ 'M', '<CMD>HopLine<CR>', 'Hop to line' },
+			{
+				'<CR>',
+				function()
+					require('hop').hint_words()
+				end,
+				desc = 'Hop to word',
+			},
+			{
+				'M',
+				function()
+					require('hop').hint_lines()
+				end,
+				desc = 'Hop to line',
+			},
 		}
 	end,
 	opts = {
-		keys = 'tnseriaoplfudhwyqzxcv',
+		keys = 'dhwyfuplaorisetn',
 	},
 }
