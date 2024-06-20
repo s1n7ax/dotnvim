@@ -18,13 +18,14 @@ return {
 	opts = {
 		window = {
 			mappings = { e = 'none' },
-			position = 'current',
+			position = 'float',
 		},
 		filesystem = {
 			window = {
 				mappings = {
 					['/'] = 'noop',
 					['z'] = 'noop',
+					['?'] = 'noop',
 					['<c-x>'] = 'open_split',
 					['<c-v>'] = 'open_vsplit',
 				},
