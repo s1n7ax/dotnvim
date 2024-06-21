@@ -10,7 +10,7 @@ return {
 		{
 			'<leader>e',
 			function()
-				require('neo-tree.command')._command('toggle')
+				require('neo-tree.command')._command('reveal', 'toggle')
 			end,
 			desc = 'Reveal NeoTree (curren buffer)',
 		},
