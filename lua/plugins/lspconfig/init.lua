@@ -54,6 +54,8 @@ return {
 				config.filetypes = filetypes
 			end
 
+			opts.inlay_hints = { enabled = false }
+
 			return opts
 		end,
 	},
