@@ -9,7 +9,7 @@ return {
 			'javascriptreact',
 			'typescriptreact',
 		}) do
-			opts.formatters_by_ft[ft] = { 'prettier' }
+			opts.formatters_by_ft[ft] = { 'prettierd' }
 		end
 	end,
 }
