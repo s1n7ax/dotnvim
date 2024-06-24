@@ -5,7 +5,7 @@ end
 
 return {
 	'Wansmer/treesj',
-	dependencies = { 'treesitter' },
+	dependencies = { 'nvim-treesitter/nvim-treesitter' },
 	keys = {
 		{
 			'<leader>it',
@@ -13,11 +13,8 @@ return {
 			desc = 'Spread/collapse block',
 		},
 	},
-	config = function()
-		local tsj = require('treesj')
+	opts = {
 
-		tsj.setup({
-			use_default_keymaps = false,
-		})
-	end,
+		use_default_keymaps = false,
+	},
 }

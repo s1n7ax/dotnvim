@@ -48,7 +48,6 @@ return {
 		indent = {
 			enable = false,
 		},
-
 		textobjects = {
 			select = {
 				enable = true,
