@@ -16,6 +16,7 @@ return {
 		},
 	},
 	opts = {
+		popup_border_style = 'solid',
 		window = {
 			mappings = { e = 'none' },
 			position = 'float',
