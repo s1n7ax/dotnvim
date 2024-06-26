@@ -44,8 +44,6 @@ function M.expand_or_jump(--[[_fallback_key]])
 	return function()
 		if ls.expand_or_jumpable() then
 			ls.expand_or_jump()
-		elseif vim.snippet.active({ direction = 1 }) then
-			return vim.snippet.jump(1)
 		else
 			-- vim.api.nvim_input(fallback_key)
 		end
@@ -56,8 +54,6 @@ function M.jump_prev(fallback_key)
 	return function()
 		if ls.jumpable(-1) then
 			ls.jump(-1)
-		elseif vim.snippet.active({ direction = -1 }) then
-			return vim.snippet.jump(-1)
 		else
 			vim.api.nvim_input(fallback_key)
 		end
