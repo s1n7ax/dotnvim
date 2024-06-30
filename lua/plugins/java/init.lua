@@ -26,7 +26,6 @@ return {
 			dir = f('~/Workspace/nvim-java-refactor'),
 		},
 		'MunifTanjim/nui.nvim',
-		'neovim/nvim-lspconfig',
 		'mfussenegger/nvim-dap',
 		{
 			'williamboman/mason.nvim',
@@ -38,10 +37,17 @@ return {
 			},
 		},
 		{
-			'williamboman/mason-lspconfig.nvim',
+			'neovim/nvim-lspconfig',
 			opts = {
-				handlers = {
-					['jdtls'] = function()
+				servers = {
+					jdtls = {
+						handlers = {
+							['$/progress'] = function(_, _result, _ctx) end,
+						},
+					},
+				},
+				setup = {
+					jdtls = function()
 						require('java').setup({
 							jdk = {
 								auto_install = false,
