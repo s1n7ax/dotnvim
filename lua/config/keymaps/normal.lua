@@ -27,6 +27,9 @@ wk.register({
 --                             Editing                              --
 ----------------------------------------------------------------------
 wk.register({
+	-- https://github.com/LazyVim/LazyVim/issues/3569
+	-- default <C-c> seems to cause an issue
+	['<C-c>'] = { '<esc>', 'Goto Normal Mode' },
 	['[<leader>'] = {
 		function()
 			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
