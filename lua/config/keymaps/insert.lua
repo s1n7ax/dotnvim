@@ -1,6 +1,9 @@
 local wk = require('which-key')
 
 wk.register({
+	-- https://github.com/LazyVim/LazyVim/issues/3569
+	-- default <C-c> seems to cause an issue
+	['<C-c>'] = { '<esc>', 'Goto Normal Mode' },
 	['<c-s>'] = { '<cmd>:w<cr>', 'Save the file' },
 	['<c-v>'] = { '<esc>pa', 'Paste' },
 	['<m-a>'] = { '<esc>I', '(Insert) Jump to line start' },
