@@ -25,41 +25,41 @@ return {
 	'nvim-telescope/telescope.nvim',
 	keys = function()
 		return {
-			{
-				',,',
-				function()
-					require('telescope.builtin').find_files()
-				end,
-				desc = 'Find Files',
-			},
-			{
-				',.',
-				function()
-					require('telescope.builtin').find_files({
-						find_command = rg_cmd,
-					})
-				end,
-				desc = 'Find All Files',
-			},
-			{
-				'<leader>n',
-				function()
-					require('telescope.builtin').buffers()
-				end,
-			},
-			{
-				'<leader>/',
-				function()
-					require('telescope.builtin').live_grep({
-						glob_pattern = rg_glob_list,
-						additional_args = {
-							'--no-ignore',
-							'--hidden',
-						},
-					})
-				end,
-				desc = 'Find Word',
-			},
+			-- 	{
+			-- 		',,',
+			-- 		function()
+			-- 			require('telescope.builtin').find_files()
+			-- 		end,
+			-- 		desc = 'Find Files',
+			-- 	},
+			-- 	{
+			-- 		',.',
+			-- 		function()
+			-- 			require('telescope.builtin').find_files({
+			-- 				find_command = rg_cmd,
+			-- 			})
+			-- 		end,
+			-- 		desc = 'Find All Files',
+			-- 	},
+			-- 	{
+			-- 		'<leader>n',
+			-- 		function()
+			-- 			require('telescope.builtin').buffers()
+			-- 		end,
+			-- 	},
+			-- 	{
+			-- 		'<leader>/',
+			-- 		function()
+			-- 			require('telescope.builtin').live_grep({
+			-- 				glob_pattern = rg_glob_list,
+			-- 				additional_args = {
+			-- 					'--no-ignore',
+			-- 					'--hidden',
+			-- 				},
+			-- 			})
+			-- 		end,
+			-- 		desc = 'Find Word',
+			-- 	},
 		}
 	end,
 	opts = function()
