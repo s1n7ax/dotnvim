@@ -1,7 +1,7 @@
 return {
 	'mistricky/codesnap.nvim',
 	build = 'make',
-	cmd = 'CodeSnap',
+	cmd = { 'CodeSnap', 'CodeSnapASCII' },
 	opts = {
 		has_breadcrumbs = true,
 		watermark = '',

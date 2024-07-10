@@ -42,7 +42,7 @@ return {
 				servers = {
 					jdtls = {
 						handlers = {
-							['$/progress'] = function(_, _result, _ctx) end,
+							['$/progress'] = function() end,
 						},
 					},
 				},
