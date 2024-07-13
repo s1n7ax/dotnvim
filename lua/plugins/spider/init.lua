@@ -16,8 +16,8 @@ return {
 		motion('w'),
 		motion('l', 'e'),
 		motion('b'),
-		-- { 'cw', 'ce' },
-		-- { 'dw', 'de' },
+		{ 'cw', 'cl' },
+		{ 'dw', 'dl' },
 	},
 	opts = {
 		subwordMovement = false,
