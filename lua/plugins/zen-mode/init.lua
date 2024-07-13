@@ -1,6 +1,14 @@
 return {
 	'folke/zen-mode.nvim',
-	keys = { ',a', '<cmd>ZenMode<cr>', desc = 'Zen Mode' },
+	keys = {
+		{
+			',a',
+			function()
+				require('zen-mode').toggle()
+			end,
+			desc = 'Zen Mode',
+		},
+	},
 	opts = {
 		window = {
 			backdrop = 0.95,
