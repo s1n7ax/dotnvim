@@ -1,5 +1,5 @@
 local wk = require('which-key')
 
-wk.register({
-	nn = { [[<c-\><c-n>]], 'Go to normal mode' },
-}, { mode = 't' })
+wk.add({
+	{ 'nn', '<c-\\><c-n>', desc = 'Go to normal mode', mode = 't' },
+})

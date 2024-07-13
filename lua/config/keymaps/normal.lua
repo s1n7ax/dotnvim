@@ -4,53 +4,32 @@ local wk = require('which-key')
 ----------------------------------------------------------------------
 --                             Windows                              --
 ----------------------------------------------------------------------
-wk.register({
-	name = 'Windows',
-
-	['<c-w><c-w>'] = { '<c-w>p', 'Jump to last window' },
-	['<c-m>'] = { '<c-w>h', 'Jump to left window' },
-	['<c-i>'] = { '<c-w>l', 'Jump to right window' },
-	['<c-n>'] = { '<c-w>j', 'Jump to below window' },
-	['<c-e>'] = { '<c-w>k', 'Jump to above window' },
+wk.add({
+	{ '', group = 'Windows' },
+	{ '<c-e>', '<c-w>k', desc = 'Jump to above window' },
+	{ '<c-i>', '<c-w>l', desc = 'Jump to right window' },
+	{ '<c-m>', '<c-w>h', desc = 'Jump to left window' },
+	{ '<c-n>', '<c-w>j', desc = 'Jump to below window' },
+	{ '<c-w><c-w>', '<c-w>p', desc = 'Jump to last window' },
 })
 
-wk.register({
-	name = 'Split window',
-	m = { window_util.split_left, 'Split left' },
-	n = { window_util.split_bottom, 'Split bottom' },
-	e = { window_util.split_top, 'Split top' },
-	i = { window_util.split_right, 'Split right' },
-}, {
-	prefix = '<tab>',
+wk.add({
+	{ '', group = 'Split window' },
+	{ '<tab>m', window_util.split_left, desc = 'Split left' },
+	{ '<tab>n', window_util.split_bottom, desc = 'Split bottom' },
+	{ '<tab>e', window_util.split_top, desc = 'Split top' },
+	{ '<tab>i', window_util.split_right, desc = 'Split right' },
 })
+
 ----------------------------------------------------------------------
 --                             Editing                              --
 ----------------------------------------------------------------------
-wk.register({
-	['[<leader>'] = {
-		function()
-			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
-			local prev_line = curr_line - 1
-			vim.api.nvim_buf_set_lines(0, prev_line, prev_line, true, { '' })
-			vim.api.nvim_input('<up>')
-		end,
-		'Add line above',
-	},
-	[']<leader>'] = {
-		function()
-			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
-			vim.api.nvim_buf_set_lines(0, curr_line, curr_line, true, { '' })
-			vim.api.nvim_input('<down>')
-		end,
-		'Add line below',
-	},
-
-	['<C-s>'] = { '<cmd>silent w<cr>', 'Save' },
-	['<C-q>'] = { '<cmd>confirm q<cr>', 'Quit' },
-	['x'] = { '"_x', 'Delete Character' },
-	['<leader><cr>'] = { 'a<cr><esc>', 'Line Break' },
-	['<leader>p'] = { 'a <esc>p', 'Paste After a Space' },
-	['<leader>ij'] = {
+wk.add({
+	{ '<C-q>', '<cmd>confirm q<cr>', desc = 'Quit' },
+	{ '<C-s>', '<cmd>silent w<cr>', desc = 'Save' },
+	{ '<leader><cr>', 'a<cr><esc>', desc = 'Line Break' },
+	{
+		'<leader>ij',
 		function()
 			local ignore_list = { 'a', 'an', 'the', 'in', 'at' }
 			local line = vim.api.nvim_get_current_line()
@@ -74,44 +53,45 @@ wk.register({
 			local new_line = table.concat(new_words, ' ')
 			vim.api.nvim_set_current_line(new_line)
 		end,
-		'Pascal Case',
+		desc = 'Pascal Case',
 	},
+	{ '<leader>p', 'a <esc>p', desc = 'Paste After a Space' },
+	{
+		'[<leader>',
+		function()
+			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+			local prev_line = curr_line - 1
+			vim.api.nvim_buf_set_lines(0, prev_line, prev_line, true, { '' })
+			vim.api.nvim_input('<up>')
+		end,
+		desc = 'Add line above',
+	},
+	{
+		']<leader>',
+		function()
+			local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+			vim.api.nvim_buf_set_lines(0, curr_line, curr_line, true, { '' })
+			vim.api.nvim_input('<down>')
+		end,
+		desc = 'Add line below',
+	},
+	{ 'x', '"_x', desc = 'Delete Character' },
 })
 
 ----------------------------------------------------------------------
 --                            Movements                             --
 ----------------------------------------------------------------------
-wk.register({
-	["''"] = { '``zz', 'Go to last jump point' },
-	['<C-o>'] = { '<C-o>zz', 'Go to prev jump point' },
-	['<C-l>'] = { '<C-i>zz', 'Go to next jump point' },
-	['0'] = { '^', 'Go to first character of line' },
-	['^'] = { '0', 'Go to start of line' },
-})
-
-----------------------------------------------------------------------
---                               LSP                                --
-----------------------------------------------------------------------
-local is_inlay_hint_active = false
-
-wk.register({
-	a = {
-		function()
-			is_inlay_hint_active = not is_inlay_hint_active
-			vim.lsp.buf.inlay_hint(0, is_inlay_hint_active)
-		end,
-		'Toggle Inlay Hint',
-	},
-}, {
-	prefix = '<leader><leader>',
+wk.add({
+	{ "''", '``zz', desc = 'Go to last jump point' },
+	{ '0', '^', desc = 'Go to first character of line' },
+	{ '<C-l>', '<C-i>zz', desc = 'Go to next jump point' },
+	{ '<C-o>', '<C-o>zz', desc = 'Go to prev jump point' },
+	{ '^', '0', desc = 'Go to start of line' },
 })
 
 ----------------------------------------------------------------------
 --                              Other                               --
 ----------------------------------------------------------------------
-
-wk.register({
-	o = { '<cmd>messages<cr>', 'Open messages window' },
-}, {
-	prefix = '<leader><leader>',
+wk.add({
+	{ '<leader><leader>o', '<cmd>messages<cr>', desc = 'Open messages window' },
 })

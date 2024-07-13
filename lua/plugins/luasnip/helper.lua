@@ -17,35 +17,34 @@ function M.register_snippets()
 end
 
 function M.register_keymaps()
-	wk.register({
-		-- when <C-i> is mapped to something, <Tab> default behaviour is shadowed
-		-- by the <C-i> mapping. To avoid this, we need to remap the <Tab> to be
-		-- itself
-		-- https://github.com/neovim/neovim/issues/20719
-		['<Tab>'] = { '<Tab>', 'Tab Space' },
+	wk.add({
+		{
+			mode = { 'i', 's' },
 
-		['<C-i>'] = {
-			M.expand_or_jump(--[['<C-i>']]),
-			'(Snippet) Expand or jump',
+			-- when <C-i> is mapped to something, <Tab> default behaviour is shadowed
+			-- by the <C-i> mapping. To avoid this, we need to remap the <Tab> to be
+			-- itself
+			-- https://github.com/neovim/neovim/issues/20719
+			{ '<Tab>', '<Tab>', desc = 'Tab Space' },
+			{ '<C-i>', M.expand_or_jump(), desc = '(Snippet) Expand or jump' },
+			{
+				'<C-m>',
+				M.jump_prev('<C-n>'),
+				desc = '(Snippet) Jump prev placeholder',
+			},
+			{ '<C-l>', M.change_choice('<C-l>'), desc = '(Snippet) Change choice' },
 		},
-		['<C-m>'] = { M.jump_prev('<C-n>'), '(Snippet) Jump prev placeholder' },
-		['<C-l>'] = { M.change_choice('<C-l>'), '(Snippet) Change choice' },
-	}, { mode = { 'i', 's' } })
-
-	wk.register({
-		['<leader><leader>w'] = { M.refresh_snips, '(Snippet) refresh' },
 	})
-	-- wk.register({
-	-- 	['<leader><leader>ww'] = { M.refresh_snippets, '(Snippet) refresh' },
-	-- })
+
+	wk.add({
+		{ '<leader><leader>w', M.refresh_snips, desc = '(Snippet) refresh' },
+	})
 end
 
 function M.expand_or_jump(--[[_fallback_key]])
 	return function()
 		if ls.expand_or_jumpable() then
 			ls.expand_or_jump()
-		else
-			-- vim.api.nvim_input(fallback_key)
 		end
 	end
 end
