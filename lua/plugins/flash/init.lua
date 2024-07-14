@@ -27,6 +27,10 @@ return {
 			search = {
 				enabled = false,
 			},
+			char = {
+				enabled = true,
+				keys = { 'F', 'f', 'T', 't' },
+			},
 		},
 	},
 	keys = keys,
