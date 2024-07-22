@@ -44,6 +44,7 @@ return {
 						handlers = {
 							['$/progress'] = function() end,
 						},
+						capabilities = vim.lsp.protocol.make_client_capabilities(),
 					},
 				},
 				setup = {
