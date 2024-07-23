@@ -1,6 +1,6 @@
 return {
 	'nvim-focus/focus.nvim',
-	enabled = true,
+	event = 'WinNew',
 	version = '*',
 	opts = {
 		enable = true,

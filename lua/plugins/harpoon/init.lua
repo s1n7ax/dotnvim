@@ -14,7 +14,6 @@ end
 
 return {
 	'ThePrimeagen/harpoon',
-	event = 'VeryLazy',
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	keys = {
 		{ ',l', mode = 'n', add_file, desc = 'Harpoon Add File' },

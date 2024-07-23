@@ -14,7 +14,8 @@ return {
 		'DBUIAddConnection',
 		'DBUIFindBuffer',
 	},
-	init = function()
+	opts = function(_, opts)
 		vim.g.db_ui_use_nerd_fonts = 1
+		return opts
 	end,
 }

@@ -1,6 +1,5 @@
 return {
 	'stevearc/overseer.nvim',
-	event = 'VeryLazy',
 	keys = {
 		{ '<leader>rt', '<CMD>OverseerToggle<CR>', desc = 'Overseer Toggle' },
 		{

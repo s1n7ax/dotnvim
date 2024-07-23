@@ -1,6 +1,5 @@
 local function toggle()
-	local tsj = require('treesj')
-	tsj.toggle()
+	require('treesj').toggle()
 end
 
 return {

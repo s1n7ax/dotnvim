@@ -43,6 +43,7 @@ vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#D8EEEB", bg = "#58B5
 
 return {
 	'hrsh7th/nvim-cmp',
+	event = 'VeryLazy',
 	dependencies = {
 		'onsails/lspkind.nvim',
 	},
