@@ -54,7 +54,16 @@ return {
 				config.filetypes = filetypes
 			end
 
-			opts.inlay_hints = { enabled = true, exclude = { 'java' } }
+			opts.inlay_hints = {
+				enabled = true,
+				exclude = {
+					'java',
+					'javascript',
+					'typescript',
+					'javascriptreact',
+					'typescriptreact',
+				},
+			}
 
 			return opts
 		end,
