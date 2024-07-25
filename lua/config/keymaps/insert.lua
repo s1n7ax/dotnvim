@@ -3,7 +3,6 @@ local wk = require('which-key')
 wk.add({
 	{
 		mode = { 'i' },
-		{ '<C-c>', '<esc>', desc = 'Goto Normal Mode' },
 		{ '<c-s>', '<cmd>:w<cr>', desc = 'Save the file' },
 		{ '<c-v>', '<esc>pa', desc = 'Paste' },
 		{ '<m-a>', '<esc>I', desc = '(Insert) Jump to line start' },
