@@ -1,30 +1,19 @@
-local priority = 1000
-
-return {
+local colorschemes = {
+	{
+		'shaunsingh/nord.nvim',
+	},
 	{
 		'neanias/everforest-nvim',
 		name = 'everforest',
-		lazy = false,
-		priority = priority,
-		opts = {
-			transparent_background_level = 2,
-		},
+		opts = { transparent_background_level = 2 },
 	},
 	{
 		'rose-pine/neovim',
-		lazy = false,
-		priority = priority,
 		name = 'rose-pine',
-		opts = {
-			highlight_groups = {
-				Visual = { bg = '#373267' },
-			},
-		},
+		opts = { highlight_groups = { Visual = { bg = '#373267' } } },
 	},
 	{
 		'folke/tokyonight.nvim',
-		lazy = false,
-		priority = priority,
 		opts = {
 			transparent = true,
 			styles = {
@@ -34,3 +23,10 @@ return {
 		},
 	},
 }
+
+for _, colorscheme in ipairs(colorschemes) do
+	colorscheme.priority = 1000
+	colorscheme.lazy = false
+end
+
+return colorschemes
