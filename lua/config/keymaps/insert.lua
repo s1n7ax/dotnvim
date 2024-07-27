@@ -3,6 +3,17 @@ local wk = require('which-key')
 wk.add({
 	{
 		mode = { 'i' },
+		--This mapping is important because <c-c> does not update the dignostics if
+		--the update on type is not set.
+		{
+			'<c-c>',
+			-- for some reason just adding '<esc>' does not work in some scenarios
+			-- like neotree prompt close
+			function()
+				vim.api.nvim_input('<esc>')
+			end,
+			desc = 'Escape',
+		},
 		{ '<c-s>', '<cmd>:w<cr>', desc = 'Save the file' },
 		{ '<c-v>', '<esc>pa', desc = 'Paste' },
 		{ '<m-a>', '<esc>I', desc = '(Insert) Jump to line start' },
