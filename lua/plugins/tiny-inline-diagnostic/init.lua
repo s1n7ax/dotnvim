@@ -1,6 +1,6 @@
 return {
 	'rachartier/tiny-inline-diagnostic.nvim',
-	event = 'LspAttach',
+	event = 'VeryLazy',
 	keys = {
 		{
 			']d',

@@ -65,6 +65,8 @@ return {
 				},
 			}
 
+			opts.diagnostics.virtual_text = false
+
 			return opts
 		end,
 	},
