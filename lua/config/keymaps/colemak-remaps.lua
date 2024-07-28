@@ -6,7 +6,7 @@ wk.add({
 		{ '<c-l>', '<c-i>', desc = 'Jump to previous jump point' },
 		{ 'E', 'K', desc = 'Keyword lookup' },
 		{ 'H', 'I', desc = 'Insert at line start' },
-		{ 'I', 'N', desc = 'Last line of window' },
+		{ 'K', 'N', desc = 'Find prev' },
 		{ 'L', 'E', desc = 'Last char before white space' },
 		{ 'N', 'J', desc = 'Join below line' },
 		{ 'e', '<up>', desc = 'Up' },

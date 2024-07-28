@@ -20,6 +20,11 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		opts = function(_, opts)
+			vim.print('setting lsp keymap')
+			local keys = require('lazyvim.plugins.lsp.keymaps').get()
+			keys[#keys + 1] = { 'K', false }
+			keys[#keys + 1] = { 'I', vim.lsp.buf.hover, desc = 'Hover' }
+
 			-- disable installation from mason if the executable is available in the
 			-- systemt already
 			for server, exec_name in pairs(ls_to_exec_map) do
