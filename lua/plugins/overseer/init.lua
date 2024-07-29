@@ -5,6 +5,7 @@ return {
 		task_list = {
 			bindings = {
 				['<C-q>'] = false,
+				['<C-e>'] = false,
 			},
 		},
 	},
