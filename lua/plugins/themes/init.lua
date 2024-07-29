@@ -3,11 +3,6 @@ local colorschemes = {
 		'shaunsingh/nord.nvim',
 	},
 	{
-		'neanias/everforest-nvim',
-		name = 'everforest',
-		opts = { transparent_background_level = 2 },
-	},
-	{
 		'rose-pine/neovim',
 		name = 'rose-pine',
 		opts = { highlight_groups = { Visual = { bg = '#373267' } } },
@@ -15,12 +10,13 @@ local colorschemes = {
 	{
 		'folke/tokyonight.nvim',
 		opts = {
-			transparent = true,
+			transparent = false,
 		},
 	},
 }
 
 for _, colorscheme in ipairs(colorschemes) do
+	colorscheme.optional = false
 	colorscheme.priority = 1000
 	colorscheme.lazy = false
 end
