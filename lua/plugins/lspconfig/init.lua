@@ -20,7 +20,6 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		opts = function(_, opts)
-			vim.print('setting lsp keymap')
 			local keys = require('lazyvim.plugins.lsp.keymaps').get()
 			keys[#keys + 1] = { 'K', false }
 			keys[#keys + 1] = { 'I', vim.lsp.buf.hover, desc = 'Hover' }
