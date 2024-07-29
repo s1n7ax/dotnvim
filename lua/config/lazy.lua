@@ -29,7 +29,6 @@ require('lazy').setup({
 		{ import = 'lazyvim.plugins.extras.dap.core' },
 		{ import = 'lazyvim.plugins.extras.lang.json' },
 		{ import = 'lazyvim.plugins.extras.editor.overseer' },
-		{ import = 'lazyvim.plugins.extras.ui.edgy' },
 
 		{ import = 'plugins' },
 	},
