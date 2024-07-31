@@ -10,6 +10,8 @@ vim.o.colorcolumn = '80'
 vim.o.splitkeep = 'cursor'
 vim.o.termguicolors = true
 
+vim.diagnostic.config({ virtual_text = false })
+
 if vim.g.neovide then
 	vim.o.guifont = 'Maple Mono NF:h17'
 	vim.opt.linespace = 0
