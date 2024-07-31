@@ -16,13 +16,13 @@ return {
 			end,
 			desc = 'Find Buffers',
 		},
-		{
-			'<leader>/',
-			function()
-				require('fzf-lua').live_grep()
-			end,
-			desc = 'Find Text',
-		},
+		-- {
+		-- 	'<leader>/',
+		-- 	function()
+		-- 		require('fzf-lua').live_grep()
+		-- 	end,
+		-- 	desc = 'Find Text',
+		-- },
 		{
 			',.',
 			function()

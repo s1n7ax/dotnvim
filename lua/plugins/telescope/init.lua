@@ -48,19 +48,19 @@ return {
 			-- 			require('telescope.builtin').buffers()
 			-- 		end,
 			-- 	},
-			-- 	{
-			-- 		'<leader>/',
-			-- 		function()
-			-- 			require('telescope.builtin').live_grep({
-			-- 				glob_pattern = rg_glob_list,
-			-- 				additional_args = {
-			-- 					'--no-ignore',
-			-- 					'--hidden',
-			-- 				},
-			-- 			})
-			-- 		end,
-			-- 		desc = 'Find Word',
-			-- 	},
+			{
+				'<leader>/',
+				function()
+					require('telescope.builtin').live_grep({
+						glob_pattern = rg_glob_list,
+						additional_args = {
+							'--no-ignore',
+							'--hidden',
+						},
+					})
+				end,
+				desc = 'Find Word',
+			},
 		}
 	end,
 	opts = {
