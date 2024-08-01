@@ -17,6 +17,11 @@ return {
 	init = function()
 		local ignore_filetypes = {
 			'OverseerList',
+			'dapui_scopes',
+			'dapui_breakpoints',
+			'dapui_stacks',
+			'dap-repl',
+			'dapui_console',
 		}
 
 		local group = vim.api.nvim_create_augroup('focus.nvim', { clear = true })
