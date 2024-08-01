@@ -33,7 +33,13 @@ return {
 	},
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	opts = {
-		winopts = { preview = { layout = 'vertical', vertical = 'up' } },
+		winopts = {
+			preview = {
+				layout = 'vertical',
+				vertical = 'up',
+				delay = 0,
+			},
+		},
 		fzf_bin = 'sk',
 		keymap = {
 			fzf = {
