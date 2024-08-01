@@ -24,5 +24,15 @@ return {
 			desc = 'Jump to next request',
 		},
 	},
-	opts = {},
+	opts = {
+		default_view = 'body',
+		icons = {
+			inlay = {
+				loading = '',
+				done = '',
+				error = '',
+			},
+			lualine = '🐼',
+		},
+	},
 }
