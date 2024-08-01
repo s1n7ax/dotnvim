@@ -16,13 +16,13 @@ return {
 			end,
 			desc = 'Find Buffers',
 		},
-		-- {
-		-- 	'<leader>/',
-		-- 	function()
-		-- 		require('fzf-lua').live_grep()
-		-- 	end,
-		-- 	desc = 'Find Text',
-		-- },
+		{
+			'<leader>/',
+			function()
+				require('fzf-lua').live_grep()
+			end,
+			desc = 'Find Text',
+		},
 		{
 			',.',
 			function()
@@ -32,20 +32,25 @@ return {
 		},
 	},
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
-	opts = {
-		winopts = {
-			preview = {
-				layout = 'vertical',
-				vertical = 'up',
-				delay = 0,
+	opts = function()
+		return {
+			grep = {
+				actions = {
+					['ctrl-g'] = { require('fzf-lua.actions').toggle_ignore },
+				},
 			},
-		},
-		fzf_bin = 'sk',
-		keymap = {
-			fzf = {
-				['ctrl-e'] = 'up',
-				['ctrl-n'] = 'down',
+			winopts = {
+				preview = {
+					delay = 0,
+				},
 			},
-		},
-	},
+			fzf_bin = 'sk',
+			keymap = {
+				fzf = {
+					['ctrl-e'] = 'up',
+					['ctrl-n'] = 'down',
+				},
+			},
+		}
+	end,
 }
