@@ -3,6 +3,10 @@ local colorschemes = {
 		'shaunsingh/nord.nvim',
 	},
 	{
+		'catppuccin/nvim',
+		name = 'catppuccin',
+	},
+	{
 		'rose-pine/neovim',
 		name = 'rose-pine',
 		opts = { highlight_groups = { Visual = { bg = '#373267' } } },
