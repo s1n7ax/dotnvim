@@ -1,5 +1,39 @@
 return {
 	'kevinhwang91/nvim-ufo',
+	keys = function()
+		return {
+			{
+				'zR',
+				require('ufo').openAllFolds,
+				desc = 'Open all folds',
+			},
+			{
+				'zM',
+				require('ufo').closeAllFolds,
+				desc = 'Close all folds',
+			},
+			{
+				'zr',
+				require('ufo').openFoldsExceptKinds,
+				desc = 'Open next fold level',
+			},
+			{
+				'zm',
+				require('ufo').closeFoldsWith,
+				desc = 'Close next fold level',
+			},
+			{
+				'I',
+				function()
+					local winid = require('ufo').peekFoldedLinesUnderCursor()
+					if not winid then
+						vim.fn.CocActionAsync('definitionHover')
+						vim.lsp.buf.hover()
+					end
+				end,
+			},
+		}
+	end,
 	dependencies = 'kevinhwang91/promise-async',
 	event = 'LspAttach',
 	opts = function(_, opts)

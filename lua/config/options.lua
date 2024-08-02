@@ -9,6 +9,7 @@ vim.o.scrolloff = 10
 vim.o.colorcolumn = '80'
 vim.o.splitkeep = 'cursor'
 vim.o.termguicolors = true
+vim.o.foldlevel = 1000
 
 vim.diagnostic.config({ virtual_text = false })
 
