@@ -8,5 +8,19 @@ return {
 				['<C-e>'] = false,
 			},
 		},
+		task_launcher = {
+			bindings = {
+				i = {
+					['<C-c>'] = false,
+				},
+			},
+		},
+		task_editor = {
+			bindings = {
+				i = {
+					['<C-c>'] = false,
+				},
+			},
+		},
 	},
 }
