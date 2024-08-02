@@ -22,7 +22,7 @@ require('lazy').setup({
 		-- add LazyVim and import its plugins
 		{
 			'LazyVim/LazyVim',
-			opts = { colorscheme = 'rose-pine' },
+			opts = { colorscheme = 'rose-pine-moon' },
 			import = 'lazyvim.plugins',
 		},
 		{ import = 'lazyvim.plugins.extras.test.core' },
