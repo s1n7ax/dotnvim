@@ -3,6 +3,14 @@ local f = require('utils.file').is_pkg_dir
 return {
 	'nvim-neotest/neotest',
 	optional = true,
+	keys = {
+		{
+			'<leader>tr',
+			function()
+				vim.print('executed')
+			end,
+		},
+	},
 	dependencies = {
 		'nvim-neotest/neotest-jest',
 		{
