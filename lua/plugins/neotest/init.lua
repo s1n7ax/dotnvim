@@ -1,29 +1,12 @@
-local f = require('utils.file').is_pkg_dir
-
 return {
 	'nvim-neotest/neotest',
 	optional = true,
-	dependencies = {
-		'nvim-neotest/neotest-jest',
+	keys = {
 		{
-			'nvim-java/neotest-jdtls',
-			dir = f('~/Workspace/neotest-jdtls'),
+			'<leader>tr',
+			function()
+				vim.print('executed')
+			end,
 		},
 	},
-	opts = function()
-		return {
-			adapters = {
-				['neotest-jest'] = require('neotest-jest')({
-					jestCommand = 'npm test --',
-					env = { CI = true },
-					cwd = function()
-						return vim.fn.getcwd()
-					end,
-				}),
-				['neotest-jdtls'] = function()
-					return require('neotest-jdtls')
-				end,
-			},
-		}
-	end,
 }
