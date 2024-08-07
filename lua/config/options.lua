@@ -13,6 +13,10 @@ vim.o.foldlevel = 1000
 
 vim.diagnostic.config({ virtual_text = false })
 
+-- I'm using nixos so mason executables are not working.
+-- By default mason will not be used to install some of the packages
+vim.g.use_mason_for_ls = false
+
 if vim.g.neovide then
 	vim.o.guifont = 'Maple Mono NF:h17'
 	vim.opt.linespace = 0

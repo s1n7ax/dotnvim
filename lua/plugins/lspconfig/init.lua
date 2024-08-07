@@ -17,75 +17,52 @@ local ls_to_exec_map = {
 }
 
 return {
-	{
-		'neovim/nvim-lspconfig',
-		opts = function(_, opts)
-			local keys = require('lazyvim.plugins.lsp.keymaps').get()
-			keys[#keys + 1] = { 'K', false }
-			keys[#keys + 1] = { 'I', vim.lsp.buf.hover, desc = 'Hover' }
+	'neovim/nvim-lspconfig',
+	opts = function(_, opts)
+		local keys = require('lazyvim.plugins.lsp.keymaps').get()
+		keys[#keys + 1] = { 'K', false }
+		keys[#keys + 1] = { 'I', vim.lsp.buf.hover, desc = 'Hover' }
 
-			-- disable installation from mason if the executable is available in the
-			-- systemt already
-			for server, exec_name in pairs(ls_to_exec_map) do
-				-- if the server config not found, enable the server
-				if not opts.servers[server] then
-					opts.servers[server] = {}
-				end
-
-				if vim.fn.executable(exec_name) then
+		-- I'm using nix so some executables installed through mason is not working
+		-- Following will disable the mason installation for some packages
+		if not vim.g.use_mason_for_ls then
+			for server, _ in pairs(ls_to_exec_map) do
+				if opts.servers[server] then
 					opts.servers[server].mason = false
 				end
 			end
+		end
 
-			-- opts.servers.emmet_language_server.filetypes = { 'rust' }
+		opts.inlay_hints = {
+			enabled = true,
+			exclude = {
+				'java',
+				'javascript',
+				'typescript',
+				'javascriptreact',
+				'typescriptreact',
+			},
+		}
 
-			-- changes in the default config
-			opts.setup.emmet_language_server = function(_, config)
-				local filetypes =
-					require('lspconfig').emmet_language_server.document_config.default_config.filetypes
+		opts.diagnostics.virtual_text = false
 
-				table.insert(filetypes, 'rust')
+		for _, server_name in ipairs(opts.servers) do
+			if opts.servers[server_name] then
+				local ok, get_config = pcall(
+					require,
+					('plugins.lspconfig.custom_configs.%s'):format(server_name)
+				)
 
-				config.filetypes = filetypes
+				if ok then
+					opts.servers[server_name] = vim.tbl_deep_extend(
+						'force',
+						opts.servers[server_name],
+						get_config()
+					)
+				end
 			end
+		end
 
-			opts.setup.tailwindcss = function(_, config)
-				local filetypes =
-					require('lspconfig').tailwindcss.document_config.default_config.filetypes
-
-				table.insert(filetypes, 'rust')
-
-				config.filetypes = filetypes
-			end
-
-			opts.inlay_hints = {
-				enabled = true,
-				exclude = {
-					'java',
-					'javascript',
-					'typescript',
-					'javascriptreact',
-					'typescriptreact',
-				},
-			}
-
-			opts.diagnostics.virtual_text = false
-
-			opts.servers.jdtls.keys = {
-				{
-					'<leader>co',
-					function()
-						vim.lsp.buf.code_action({
-							---@diagnostic disable-next-line: missing-fields
-							context = { only = { 'source.organizeImports' } },
-							apply = true,
-						})
-					end,
-					desc = 'Organize Imports',
-				},
-			}
-
-			return opts
-		end,
-	},
+		return opts
+	end,
 }
