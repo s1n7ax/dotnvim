@@ -44,7 +44,6 @@ return {
 					delay = 0,
 				},
 			},
-			fzf_bin = 'sk',
 			keymap = {
 				fzf = {
 					['ctrl-e'] = 'up',
