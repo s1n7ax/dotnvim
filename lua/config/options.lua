@@ -10,7 +10,7 @@ vim.o.colorcolumn = '80'
 vim.o.splitkeep = 'cursor'
 vim.o.termguicolors = true
 vim.o.foldlevel = 1000
-
+vim.o.signcolumn = 'yes:2'
 vim.diagnostic.config({ virtual_text = false })
 
 -- I'm using nixos so mason executables are not working.
