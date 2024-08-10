@@ -1,18 +1,6 @@
-local focus = function(direction)
-	return function()
-		require('focus').split_command(direction)
-	end
-end
-
 return {
 	'nvim-focus/focus.nvim',
 	event = 'WinNew',
-	keys = {
-		{ '<tab>m', focus('h'), desc = 'Split left' },
-		{ '<tab>n', focus('j'), desc = 'Split bottom' },
-		{ '<tab>e', focus('k'), desc = 'Split top' },
-		{ '<tab>i', focus('l'), desc = 'Split right' },
-	},
 	version = '*',
 	init = function()
 		local ignore_filetypes = {
