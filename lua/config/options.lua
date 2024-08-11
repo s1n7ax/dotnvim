@@ -3,6 +3,7 @@ vim.opt.listchars = {
 	tab = '> ',
 }
 
+vim.o.report = 10000000
 vim.o.pumblend = 0
 vim.o.hlsearch = false
 vim.o.scrolloff = 10
