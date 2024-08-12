@@ -28,7 +28,7 @@ return {
 	end,
 	opts = {
 		enable = true,
-		commands = false,
+		commands = true,
 		autoresize = {
 			enable = true,
 			width = 100, -- Force width for the focused window
