@@ -1,35 +1,27 @@
 {
-  "neodev": {
-    "library": {
-      "enabled": true,
-      "plugins": true
-    }
-  },
   "neoconf": {
     "plugins": {
-      "jsonls": {
-        "enabled": true
-      },
       "lua_ls": {
         "enabled": true
       },
-      "jdtls": {
-        "enabled": true
-      },
-      "cssls": {
-        "enabled": true
+      "jsonls": {
+        "enabled": true,
+        "configured_servers_only": false
       }
     }
   },
   "lspconfig": {
     "lua_ls": {
-      "Lua.format.enable": false,
-      "Lua.semantic.enable": false,
-      "Lua.workspace": {
-        "maxPreload": 10000,
-        "preloadFileSize": 10000
-      },
-      "Lua.telemetry": false
+      "Lua": {
+        "workspace.library": [],
+        "format.enable": false,
+        "semantic.enable": false,
+        "workspace": {
+          "maxPreload": 10000,
+          "preloadFileSize": 10000
+        },
+        "telemetry": false
+      }
     },
     "jsonls": {
       "json.format.enable": false
