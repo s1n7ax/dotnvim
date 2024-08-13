@@ -25,7 +25,7 @@ return {
 		},
 	},
 	opts = {
-		default_view = 'body',
+		default_view = 'headers_body',
 		icons = {
 			inlay = {
 				loading = '',
