@@ -1,6 +1,9 @@
 return {
 	'stevearc/overseer.nvim',
 	optional = true,
+	keys = {
+		{ '<leader>ol', '<cmd>OverseerLoadBundle<cr>', desc = 'Load bundle' },
+	},
 	opts = {
 		task_list = {
 			bindings = {
