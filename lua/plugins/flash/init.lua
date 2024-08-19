@@ -33,5 +33,7 @@ return {
 			},
 		},
 	},
-	keys = keys,
+	keys = function()
+		return keys
+	end,
 }
