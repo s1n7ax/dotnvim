@@ -8,7 +8,7 @@ return {
 	opts = function(_, opts)
 		local cmp = require('cmp')
 
-		opts.experimental.ghost_text = false
+		opts.experimental.ghost_text = true
 
 		opts.mapping = {
 			['<C-e>'] = cmp.mapping.select_prev_item({
@@ -43,52 +43,52 @@ return {
 			end,
 		}
 
-		opts.sources = {
-			{
-				name = 'nvim_lsp_signature_help',
-				priority = 100,
-				group_index = 1,
-			},
-			{
-				name = 'nvim_lsp',
-				priority = 100,
-				group_index = 1,
-			},
-			{
-				name = 'nvim_lua',
-				priority = 100,
-				group_index = 1,
-			},
-			{
-				name = 'path',
-				priority = 90,
-				group_index = 2,
-			},
-			{
-				name = 'luasnip',
-				keyword_length = 3,
-				max_item_count = 3,
-				autocomplete = false,
-				priority = 80,
-				group_index = 3,
-			},
-			{
-				name = 'spell',
-				keyword_length = 3,
-				max_item_count = 3,
-				autocomplete = false,
-				priority = 70,
-				group_index = 3,
-			},
-			{
-				name = 'buffer',
-				keyword_length = 3,
-				autocomplete = false,
-				max_item_count = 3,
-				priority = 50,
-				group_index = 3,
-			},
-		}
+		-- opts.sources = {
+		-- 	{
+		-- 		name = 'nvim_lsp_signature_help',
+		-- 		priority = 100,
+		-- 		group_index = 1,
+		-- 	},
+		-- 	{
+		-- 		name = 'nvim_lsp',
+		-- 		priority = 100,
+		-- 		group_index = 1,
+		-- 	},
+		-- 	{
+		-- 		name = 'nvim_lua',
+		-- 		priority = 100,
+		-- 		group_index = 1,
+		-- 	},
+		-- 	{
+		-- 		name = 'path',
+		-- 		priority = 90,
+		-- 		group_index = 2,
+		-- 	},
+		-- 	{
+		-- 		name = 'luasnip',
+		-- 		keyword_length = 3,
+		-- 		max_item_count = 3,
+		-- 		autocomplete = false,
+		-- 		priority = 80,
+		-- 		group_index = 3,
+		-- 	},
+		-- 	{
+		-- 		name = 'spell',
+		-- 		keyword_length = 3,
+		-- 		max_item_count = 3,
+		-- 		autocomplete = false,
+		-- 		priority = 70,
+		-- 		group_index = 3,
+		-- 	},
+		-- 	{
+		-- 		name = 'buffer',
+		-- 		keyword_length = 3,
+		-- 		autocomplete = false,
+		-- 		max_item_count = 3,
+		-- 		priority = 50,
+		-- 		group_index = 3,
+		-- 	},
+		-- }
 
 		return opts
 	end,
