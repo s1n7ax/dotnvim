@@ -37,7 +37,7 @@ function M.register_keymaps()
 	})
 
 	wk.add({
-		{ '<leader><leader>w', M.refresh_snips, desc = '(Snippet) refresh' },
+		{ '<leader>w', M.refresh_snips, desc = '(Snippet) refresh' },
 	})
 end
 
@@ -70,7 +70,7 @@ function M.change_choice(fallback_key)
 end
 
 function M.refresh_snips()
-	print('Refreshing lua snips')
+	vim.notify('Refreshing lua snips')
 
 	local module_utils = require('utils.module')
 

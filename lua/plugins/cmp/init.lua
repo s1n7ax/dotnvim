@@ -10,7 +10,7 @@ return {
 	opts = function(_, opts)
 		local cmp = require('cmp')
 
-		opts.experimental.ghost_text = true
+		opts.experimental.ghost_text = false
 
 		opts.mapping = {
 			['<C-e>'] = cmp.mapping.select_prev_item({

@@ -1,6 +1,6 @@
 return {
 	'stevearc/conform.nvim',
-	event = 'VeryLazy',
+	event = 'LazyFile',
 	opts = function(_, opts)
 		opts.formatters_by_ft['nix'] = { 'nixfmt' }
 
@@ -10,6 +10,7 @@ return {
 			'javascriptreact',
 			'typescriptreact',
 			'markdown',
+			'yaml',
 		}) do
 			opts.formatters_by_ft[ft] = { 'prettierd' }
 		end
