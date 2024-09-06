@@ -5,22 +5,30 @@ return {
 		{ '<leader>r', '', desc = '+Rest' },
 		{
 			'<leader>rs',
-			require('kulala').run,
+			function()
+				require('kulala').run()
+			end,
 			desc = 'Send the request',
 		},
 		{
 			'<leader>rt',
-			require('kulala').toggle_view,
+			function()
+				require('kulala').toggle_view()
+			end,
 			desc = 'Toggle headers/body',
 		},
 		{
 			'<leader>re',
-			require('kulala').jump_prev,
+			function()
+				require('kulala').jump_prev()
+			end,
 			desc = 'Jump to previous request',
 		},
 		{
 			'<leader>rn',
-			require('kulala').jump_next,
+			function()
+				require('kulala').jump_next()
+			end,
 			desc = 'Jump to next request',
 		},
 	},
