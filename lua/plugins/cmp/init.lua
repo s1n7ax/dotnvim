@@ -70,7 +70,7 @@ return {
 			{
 				name = 'path',
 				priority = 90,
-				group_index = 2,
+				group_index = 1,
 			},
 			{
 				name = 'luasnip',
