@@ -17,7 +17,7 @@ require('lazy').setup({
 		enabled = false,
 		notify = false, -- get a notification when changes are found
 	},
-	concurrency = 5,
+	concurrency = 1,
 	spec = {
 		-- add LazyVim and import its plugins
 		{
