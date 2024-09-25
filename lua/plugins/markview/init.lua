@@ -14,7 +14,7 @@ return {
 		enabled = false,
 	},
 	{
-		'MeanderingProgrammer/markdown.nvim',
+		'MeanderingProgrammer/render-markdown.nvim',
 		optional = true,
 		enabled = false,
 	},
