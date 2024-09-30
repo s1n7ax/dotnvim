@@ -6,7 +6,7 @@ return {
 	dependencies = {
 		{
 			's1n7ax/nvim-snips',
-			dir = f('~/Workspace/nvim-snips'),
+			dir = f('~/Workspace/my-projects/nvim-snips'),
 		},
 		'nvim-treesitter/nvim-treesitter',
 		{
