@@ -12,6 +12,13 @@ local del_norm = {
 			'<c-l>',
 		},
 	},
+	{
+		mode = { 'n' },
+		keymaps = {
+			'<leader>wd',
+			'<leader>wm',
+		},
+	},
 }
 
 for _, rule in ipairs(del_norm) do
