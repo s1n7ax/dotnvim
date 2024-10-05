@@ -11,6 +11,7 @@ function M.setup()
 		s('rs', kubernetes.primitives.replicaset()),
 		s('dep', kubernetes.primitives.deployment()),
 		s('ser', kubernetes.primitives.service()),
+		s('sec', kubernetes.primitives.secret()),
 	})
 end
 
