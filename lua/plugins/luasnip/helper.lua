@@ -45,6 +45,8 @@ function M.expand_or_jump(--[[_fallback_key]])
 	return function()
 		if ls.expand_or_jumpable() then
 			ls.expand_or_jump()
+		else
+			require('llm.completion').complete()
 		end
 	end
 end

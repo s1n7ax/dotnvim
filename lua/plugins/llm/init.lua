@@ -2,6 +2,16 @@ return {
 	'huggingface/llm.nvim',
 	event = 'VeryLazy',
 	lazy = false,
+	keys = {
+		{
+			'<c-j>',
+			function()
+				require('llm.completion').complete()
+			end,
+			mode = 'i',
+			desc = 'complete',
+		},
+	},
 	opts = {
 		lsp = {
 			bin_path = '/etc/profiles/per-user/s1n7ax/bin/llm-ls',

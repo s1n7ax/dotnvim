@@ -47,12 +47,6 @@ return {
 
 		local custom_sources = {
 			{
-				name = 'copilot',
-				priority = 100,
-				group_index = 1,
-				max_item_count = 1,
-			},
-			{
 				name = 'nvim_lsp_signature_help',
 				priority = 100,
 				group_index = 1,
