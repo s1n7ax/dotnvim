@@ -1,7 +1,7 @@
 return {
 	'huggingface/llm.nvim',
+	enabled = false,
 	event = 'VeryLazy',
-	lazy = false,
 	keys = {
 		{
 			'<c-j>',
@@ -20,7 +20,7 @@ return {
 
 		backend = 'ollama',
 		model = 'deepseek-coder:6.7b-base',
-		url = 'http://192.168.1.112:11434', -- llm-ls uses "/api/generate"
+		url = 'http://localhost:11434', -- llm-ls uses "/api/generate"
 		-- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
 		fim = {
 			enabled = true,
