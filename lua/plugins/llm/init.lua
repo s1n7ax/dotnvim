@@ -19,7 +19,7 @@ return {
 		},
 
 		backend = 'ollama',
-		model = 'deepseek-coder:6.7b-base',
+		model = 'deepseek-coder-v2:latest',
 		url = 'http://localhost:11434', -- llm-ls uses "/api/generate"
 		-- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
 		fim = {
