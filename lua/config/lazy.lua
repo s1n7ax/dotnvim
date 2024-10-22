@@ -41,6 +41,7 @@ require('lazy').setup({
 		{ import = 'lazyvim.plugins.extras.lsp.neoconf' },
 		{ import = 'lazyvim.plugins.extras.test.core' },
 		{ import = 'lazyvim.plugins.extras.util.rest' },
+		{ import = 'lazyvim.plugins.extras.editor.fzf' },
 
 		{ import = 'plugins' },
 	},

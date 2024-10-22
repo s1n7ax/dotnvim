@@ -1,5 +1,6 @@
 return {
 	'ibhagwan/fzf-lua',
+	optional = true,
 	cmd = { 'FzfLua' },
 	keys = {
 		{
