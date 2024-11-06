@@ -2,6 +2,10 @@ return {
 	'zbirenbaum/copilot.lua',
 	optional = true,
 	opts = {
+		suggestion = {
+			enabled = false,
+			auto_trigger = false,
+		},
 		filetypes = {
 			markdown = true,
 			help = true,

@@ -7,7 +7,7 @@ function M.setup()
 	local common = require('snips.common')
 	local js = require('snips.javascript')
 	local ts = require('snips.typescript')
-	local jsr = require('snips.javascriptreact')
+	local jsr = require('snips.typescriptreact')
 
 	local s = ls.s
 	local i = ls.insert_node
@@ -75,6 +75,7 @@ function M.setup()
 
 			s('us', jsr.primitives.use_state()),
 			s('ue', jsr.primitives.use_effect()),
+			s('ur', jsr.primitives.use_ref()),
 		}
 
 		return tbl.concat(ts_snip(), snips)

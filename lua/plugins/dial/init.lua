@@ -4,13 +4,6 @@ local function manupilate(direction, mode, group)
 	end
 end
 
-local function concat_table(t1, t2)
-	for i = 1, #t2 do
-		t1[#t1 + 1] = t2[i]
-	end
-	return t1
-end
-
 return {
 	'monaqa/dial.nvim',
 	keys = {
@@ -75,15 +68,17 @@ return {
 			augend.date.alias['%d/%m/%Y'],
 		}
 
-		local lua = concat_table(common, {
+		local common_lang = {
+			augend.constant.new({
+				elements = { '&&', '||' },
+				word = true,
+				cyclic = true,
+			}),
 			augend.constant.new({
 				elements = { 'and', 'or' },
 				word = true,
 				cyclic = true,
 			}),
-		})
-
-		local java = concat_table(common, {
 			augend.constant.new({
 				elements = { 'private', 'public', 'protected' },
 				word = true,
@@ -94,15 +89,40 @@ return {
 				word = true,
 				cyclic = true,
 			}),
-		})
+			augend.constant.new({
+				elements = { 'const', 'let' },
+				word = true,
+				cyclic = true,
+			}),
+		}
+
+		for _, v in ipairs(common) do
+			table.insert(common_lang, v)
+		end
 
 		require('dial.config').augends:register_group({
 			default = common,
 		})
 
-		require('dial.config').augends:on_filetype({
-			lua,
-			java = java,
-		})
+		local on_filetype = {}
+
+		for _, lang in ipairs({
+			'lua',
+			'java',
+			'javascript',
+			'typescript',
+			'rust',
+			'python',
+			'typescriptreact',
+			'javascriptreact',
+		}) do
+			on_filetype[lang] = common_lang
+		end
+
+		on_filetype['markdown'] = {
+			augend.misc.alias.markdown_header,
+		}
+
+		require('dial.config').augends:on_filetype(on_filetype)
 	end,
 }
