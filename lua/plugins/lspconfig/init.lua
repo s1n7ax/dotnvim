@@ -1,3 +1,9 @@
+-- I'm using NixOS so most of the binaries downloaded from Mason is not going to
+-- work in my env. So, following will check if the binary is available already
+-- at system level, if so, package will not be installed through Mason
+
+-- @NOTE: following is not enabling language servers, just saying if you enable
+-- one of these, then use the system package instead of mason package
 local ls_to_exec_map = {
 	cssls = 'vscode-css-language-server',
 	jsonls = 'vscode-json-language-server',
@@ -14,6 +20,7 @@ local ls_to_exec_map = {
 	tsserver = 'typescript-language-server',
 	yamlls = 'yaml-language-server',
 	emmet_language_server = 'emmet-language-server',
+	html = 'vscode-html-language-server',
 }
 
 return {
@@ -22,6 +29,9 @@ return {
 		local keys = require('lazyvim.plugins.lsp.keymaps').get()
 		keys[#keys + 1] = { 'K', false }
 		keys[#keys + 1] = { 'I', vim.lsp.buf.hover, desc = 'Hover' }
+
+		opts.servers.emmet_language_server = {}
+		opts.servers.html = {}
 
 		-- I'm using nix so some executables installed through mason is not working
 		-- Following will disable the mason installation for some packages
@@ -33,6 +43,7 @@ return {
 			end
 		end
 
+		-- Exclude inlay_hints for following languages
 		opts.inlay_hints = {
 			enabled = true,
 			exclude = {
@@ -46,6 +57,8 @@ return {
 
 		opts.diagnostics.virtual_text = false
 
+		--@NOTE: following loads the custom configurations IF EXISTS from the
+		--custom_config directory
 		for _, server_name in ipairs(opts.servers) do
 			if opts.servers[server_name] then
 				local ok, get_config = pcall(
