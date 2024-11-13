@@ -25,7 +25,6 @@ require('lazy').setup({
 			opts = { colorscheme = 'catppuccin-mocha' },
 			import = 'lazyvim.plugins',
 		},
-		{ import = 'lazyvim.plugins.extras.coding.copilot' },
 		{ import = 'lazyvim.plugins.extras.coding.copilot-chat' },
 		{ import = 'lazyvim.plugins.extras.dap.core' },
 		{ import = 'lazyvim.plugins.extras.editor.overseer' },
