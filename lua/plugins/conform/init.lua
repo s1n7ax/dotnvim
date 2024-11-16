@@ -11,6 +11,8 @@ return {
 			'typescriptreact',
 			'markdown',
 			'yaml',
+			'json',
+			'html',
 		}) do
 			opts.formatters_by_ft[ft] = { 'prettierd' }
 		end
