@@ -1,9 +1,6 @@
 local logo = vim.split(
 	[[
 
-
-
-
           d888            8888888888
          d8888                  d88P
            888                 d88P
@@ -12,9 +9,6 @@ local logo = vim.split(
 "Y8888b.   888   888  888   d88P   .d888888   X88K
      X88   888   888  888  d88P    888  888 .d8""8b.
  88888P' 8888888 888  888 d88P     "Y888888 888  888
-
-
-
 ]],
 	'\n'
 )
@@ -34,11 +28,28 @@ for i, line in ipairs(logo) do
 	end
 end
 
+---@class snacks.dashboard.Config
+local dashboard = {
+	enabled = true,
+	preset = {
+		header = table.concat(logo, '\n'),
+	},
+}
+
 return {
-	'nvimdev/dashboard-nvim',
+	'folke/snacks.nvim',
+	priority = 1000,
+	optional = true,
+	lazy = false,
 	opts = {
-		config = {
-			header = logo,
-		},
+		dashboard = dashboard,
+		-- your configuration comes here
+		-- or leave it empty to use the default settings
+		-- refer to the configuration section below
+		bigfile = { enabled = true },
+		notifier = { enabled = true },
+		quickfile = { enabled = true },
+		statuscolumn = { enabled = true },
+		words = { enabled = true },
 	},
 }
