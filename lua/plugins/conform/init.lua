@@ -16,5 +16,7 @@ return {
 		}) do
 			opts.formatters_by_ft[ft] = { 'prettierd' }
 		end
+
+		opts.formatters_by_ft['sql'] = { 'pg_format' }
 	end,
 }
