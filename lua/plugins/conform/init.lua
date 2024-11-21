@@ -5,14 +5,22 @@ return {
 		opts.formatters_by_ft['nix'] = { 'nixfmt' }
 
 		for _, ft in ipairs({
-			'javascript',
-			'typescript',
-			'javascriptreact',
-			'typescriptreact',
-			'markdown',
-			'yaml',
-			'json',
+			'css',
+			'graphql',
+			'handlebars',
 			'html',
+			'javascript',
+			'javascriptreact',
+			'json',
+			'jsonc',
+			'less',
+			'markdown',
+			'markdown.mdx',
+			'scss',
+			'typescript',
+			'typescriptreact',
+			'vue',
+			'yaml',
 		}) do
 			opts.formatters_by_ft[ft] = { 'prettierd' }
 		end
