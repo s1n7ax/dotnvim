@@ -24,6 +24,7 @@ function M.setup()
 			s('ex', js.primitives.export()),
 			s('as', js.primitives.async()),
 			s('aw', js.primitives.await()),
+			s('prom', js.primitives.new_promise()),
 
 			s('fa', js.choices.anonymous_func()),
 			s('o', js.choices.stdout()),
