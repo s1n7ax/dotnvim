@@ -10,7 +10,6 @@ function M.setup()
 	local jsr = require('snips.typescriptreact')
 
 	local s = ls.s
-	local i = ls.insert_node
 
 	local common_snip = function()
 		return {
@@ -20,22 +19,16 @@ function M.setup()
 			s('des', js.primitives.describe()),
 			s('tc', js.primitives.test()),
 			s('exp', js.primitives.expect()),
+			s('un', js.primitives.undefined()),
+			s('if', js.primitives.if_cond()),
+			s('ex', js.primitives.export()),
+			s('as', js.primitives.async()),
+			s('aw', js.primitives.await()),
 
 			s('fa', js.choices.anonymous_func()),
+			s('o', js.choices.stdout()),
 
-			s('o', js.choices.stdout(), {
-				stored = {
-					value = i(1, 'value'),
-				},
-			}),
-
-			s('fun', js.dynamic.func(), {
-				stored = {
-					name = i(1, 'name'),
-					param = i(1),
-					body = i(1),
-				},
-			}),
+			s('f', js.dynamic.func()),
 		}
 	end
 
