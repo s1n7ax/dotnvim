@@ -8,6 +8,7 @@ function M.setup()
 	local js = require('snips.javascript')
 	local ts = require('snips.typescript')
 	local jsr = require('snips.typescriptreact')
+	local sv = require('snips.svelte')
 
 	local s = ls.s
 
@@ -75,11 +76,21 @@ function M.setup()
 		return tbl.concat(ts_snip(), snips)
 	end
 
+	local svelte_snips = function()
+		local snips = {
+			s('scr', sv.primitives.script()),
+		}
+
+		return tbl.concat(ts_snip(), snips)
+	end
+
 	ls.add_snippets('javascript', js_snip())
 	ls.add_snippets('typescript', ts_snip())
 
 	ls.add_snippets('javascriptreact', jsx_snip())
 	ls.add_snippets('typescriptreact', tsx_snip())
+
+	ls.add_snippets('svelte', svelte_snips())
 end
 
 return M
