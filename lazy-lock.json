@@ -12,6 +12,7 @@
   "codesnap.nvim": { "branch": "main", "commit": "6400480aa6cc366cbd931146c429aaa64680dab9" },
   "conform.nvim": { "branch": "master", "commit": "62d5accad8b29d6ba9b58d3dff90c43a55621c60" },
   "crates.nvim": { "branch": "main", "commit": "8bf8358ee326d5d8c11dcd7ac0bcc9ff97dbc785" },
+  "debugprint.nvim": { "branch": "main", "commit": "74c01be25b8251f30b130ce0ad3425ecb1bad4da" },
   "dial.nvim": { "branch": "master", "commit": "46b4375e84e8eb771129bff6b2b1e47746601ef9" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "dressing.nvim": { "branch": "master", "commit": "1b7921eecc65af1baf8ac1dc06f0794934cbcfb2" },
