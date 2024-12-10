@@ -21,6 +21,7 @@ return {
 			'typescriptreact',
 			'vue',
 			'yaml',
+			'svelte',
 		}) do
 			opts.formatters_by_ft[ft] = { 'prettierd' }
 		end
