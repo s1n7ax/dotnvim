@@ -8,6 +8,7 @@ local keys = {
 
 return {
 	'karb94/neoscroll.nvim',
+	optional = true,
 	keys = keys,
 	opts = {
 		easing = 'quadratic',
