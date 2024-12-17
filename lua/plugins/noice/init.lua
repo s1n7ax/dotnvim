@@ -1,5 +1,6 @@
 return {
 	'folke/noice.nvim',
+	-- snaks.notify replaces this plugin
 	optional = true,
 	opts = {
 		lsp = {

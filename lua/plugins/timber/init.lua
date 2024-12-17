@@ -2,12 +2,19 @@ return {
 	'Goose97/timber.nvim',
 	keys = {
 		',dd',
+		'gle',
+		'glo',
+		'gl<S-o>',
+		'glb',
+		'gla',
+		'g<S-l>j',
+		'g<S-l>k',
+		'g<S-l>b',
+		'g<S-l>a',
 	},
-	version = '*',
-	event = 'LspAttach',
 	opts = {
 		keymaps = {
-			insert_log_below = 'gln',
+			insert_log_below = ',dd',
 			insert_log_above = 'gle',
 			insert_plain_log_below = 'glo',
 			insert_plain_log_above = 'gl<S-o>',

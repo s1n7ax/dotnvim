@@ -1,9 +1,6 @@
 return {
 	'nvim-telescope/telescope.nvim',
 	optional = true,
-	keys = function()
-		return {}
-	end,
 	cmd = { 'Telescope' },
 	opts = {
 		defaults = {
