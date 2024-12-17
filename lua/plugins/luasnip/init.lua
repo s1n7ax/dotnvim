@@ -13,16 +13,6 @@ return {
 			's1n7ax/nvim-ts-utils',
 			dir = f('~/Workspace/nvim-ts-utils'),
 		},
-		{
-			'hrsh7th/nvim-cmp',
-			opts = {
-				snippet = {
-					expand = function(args)
-						require('luasnip').lsp_expand(args.body)
-					end,
-				},
-			},
-		},
 	},
 	config = function()
 		local helper = require('plugins.luasnip.helper')
@@ -30,4 +20,31 @@ return {
 		helper.register_snippets()
 		helper.register_keymaps()
 	end,
+	specs = {
+		{
+			'saghen/blink.cmp',
+			opts = function(_, opts)
+				local ls = require('luasnip')
+
+				return vim.tbl_deep_extend('force', opts, {
+					keymap = {
+						preset = 'enter',
+						['<CR>'] = {
+							'accept',
+							function()
+								if ls.jumpable(-1) then
+									ls.jump(-1)
+									return true
+								else
+									vim.schedule(function()
+										vim.api.nvim_input('<m-o>')
+									end)
+								end
+							end,
+						},
+					},
+				})
+			end,
+		},
+	},
 }

@@ -27,11 +27,12 @@ function M.register_keymaps()
 			-- https://github.com/neovim/neovim/issues/20719
 			{ '<Tab>', '<Tab>', desc = 'Tab Space' },
 			{ '<C-i>', M.expand_or_jump(), desc = '(Snippet) Expand or jump' },
-			{
-				'<C-m>',
-				M.jump_prev('<C-n>'),
-				desc = '(Snippet) Jump prev placeholder',
-			},
+			-- {
+			-- 	'<c-m>',
+			-- 	M.jump_prev('<c-m>'),
+			-- 	desc = '(Snippet) Jump prev placeholder',
+			-- 	silent = true,
+			-- },
 			{ '<C-l>', M.change_choice('<C-l>'), desc = '(Snippet) Change choice' },
 		},
 	})
@@ -52,8 +53,11 @@ end
 function M.jump_prev(fallback_key)
 	return function()
 		if ls.jumpable(-1) then
+			vim.print('exandable')
 			ls.jump(-1)
+			return true
 		else
+			vim.print('fallback')
 			vim.api.nvim_input(fallback_key)
 		end
 	end
