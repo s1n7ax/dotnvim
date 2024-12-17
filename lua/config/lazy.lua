@@ -22,7 +22,7 @@ require('lazy').setup({
 		-- add LazyVim and import its plugins
 		{
 			'LazyVim/LazyVim',
-			opts = { colorscheme = 'catppuccin-mocha' },
+			opts = { colorscheme = 'rose-pine-moon' },
 			import = 'lazyvim.plugins',
 		},
 		{ import = 'lazyvim.plugins.extras.ai.copilot-chat' },
