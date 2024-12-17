@@ -5,7 +5,7 @@ return {
 		check_ts = true,
 		fast_wrap = {
 			map = '<c-e>',
-			chars = { '{', '[', '(', '"', "'" },
+			chars = { '{', '[', '(', '"', "'", '<' },
 			pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
 			end_key = '$',
 			keys = 'tnseriao',
@@ -30,6 +30,10 @@ return {
 		end
 
 		npairs.add_rules({
+			-- Before <|
+			-- After <|>
+			Rule('<', '>'):with_move(cond.none()),
+
 			-- add margin after cursor on space
 			-- Before: (|)
 			-- After: ( | )
