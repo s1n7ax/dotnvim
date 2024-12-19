@@ -2,7 +2,7 @@ local f = require('utils.file').is_pkg_dir
 
 return {
 	'L3MON4D3/LuaSnip',
-	optional = true,
+	optional = false,
 	dependencies = {
 		{
 			's1n7ax/nvim-snips',
