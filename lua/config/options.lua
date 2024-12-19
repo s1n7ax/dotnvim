@@ -21,8 +21,8 @@ vim.g.use_mason_for_ls = false
 -- disable annoying keymaps added by neovim in sql files
 vim.g.omni_sql_no_default_maps = false
 
--- without this nvim-cmp will not be enabled
-vim.g.lazyvim_cmp = 'nvim-cmp'
+-- by default lazyvim uses latest tag as the version to use prebuild binaries
+vim.g.lazyvim_blink_main = true
 
 if vim.g.neovide then
 	vim.o.guifont = 'Maple Mono NF:h17'

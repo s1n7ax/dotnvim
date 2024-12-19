@@ -53,9 +53,7 @@ end
 function M.jump_prev(fallback_key)
 	return function()
 		if ls.jumpable(-1) then
-			vim.print('exandable')
 			ls.jump(-1)
-			return true
 		else
 			vim.print('fallback')
 			vim.api.nvim_input(fallback_key)

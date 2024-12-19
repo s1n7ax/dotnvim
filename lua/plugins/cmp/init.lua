@@ -2,10 +2,9 @@ local list_util = require('utils.list')
 
 return {
 	'hrsh7th/nvim-cmp',
-	event = 'VeryLazy',
+	optional = true,
 	dependencies = {
 		'onsails/lspkind.nvim',
-		-- 'ray-x/cmp-sql',
 	},
 	opts = function(_, opts)
 		local cmp = require('cmp')

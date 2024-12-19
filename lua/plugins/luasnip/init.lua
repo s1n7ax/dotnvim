@@ -2,7 +2,7 @@ local f = require('utils.file').is_pkg_dir
 
 return {
 	'L3MON4D3/LuaSnip',
-	event = 'LazyFile',
+	optional = true,
 	dependencies = {
 		{
 			's1n7ax/nvim-snips',
@@ -23,28 +23,44 @@ return {
 	specs = {
 		{
 			'saghen/blink.cmp',
-			opts = function(_, opts)
-				local ls = require('luasnip')
+			opts = {
+				keymap = {
+					['<cr>'] = {
+						function(cmp)
+							local ls = require('luasnip')
 
-				return vim.tbl_deep_extend('force', opts, {
-					keymap = {
-						preset = 'enter',
-						['<CR>'] = {
-							'accept',
-							function()
-								if ls.jumpable(-1) then
+							if cmp.is_visible() then
+								return cmp.select_and_accept()
+							end
+
+							if ls.jumpable(-1) then
+								vim.schedule(function()
 									ls.jump(-1)
-									return true
-								else
-									vim.schedule(function()
-										vim.api.nvim_input('<m-o>')
-									end)
-								end
-							end,
-						},
+								end)
+
+								return true
+							end
+
+							return false
+						end,
+						'fallback',
 					},
-				})
-			end,
+				},
+				snippets = {
+					expand = function(snippet)
+						require('luasnip').lsp_expand(snippet)
+					end,
+					active = function(filter)
+						if filter and filter.direction then
+							return require('luasnip').jumpable(filter.direction)
+						end
+						return require('luasnip').in_snippet()
+					end,
+					jump = function(direction)
+						require('luasnip').jump(direction)
+					end,
+				},
+			},
 		},
 	},
 }

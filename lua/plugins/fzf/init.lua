@@ -1,7 +1,6 @@
 return {
 	'ibhagwan/fzf-lua',
 	optional = true,
-	cmd = { 'FzfLua' },
 	keys = {
 		{
 			',,',
@@ -32,25 +31,29 @@ return {
 			desc = 'Find Workspace Symbol',
 		},
 	},
-	dependencies = { 'nvim-tree/nvim-web-devicons' },
-	opts = function()
-		return {
-			grep = {
-				actions = {
-					['ctrl-g'] = { require('fzf-lua.actions').toggle_ignore },
-				},
+	opts = {
+		previewers = {
+			builtin = {
+				-- disable treesitter for files bigger than 100KB
+				syntax_limit_b = 1024 * 100, -- 100KB
 			},
-			winopts = {
-				preview = {
-					delay = 0,
-				},
+		},
+
+		oldfiles = {
+			cwd_only = true,
+			stat_file = true,
+			include_current_session = true,
+		},
+		winopts = {
+			preview = {
+				delay = 70,
 			},
-			keymap = {
-				fzf = {
-					['ctrl-e'] = 'up',
-					['ctrl-n'] = 'down',
-				},
+		},
+		keymap = {
+			fzf = {
+				['ctrl-e'] = 'up',
+				['ctrl-n'] = 'down',
 			},
-		}
-	end,
+		},
+	},
 }
