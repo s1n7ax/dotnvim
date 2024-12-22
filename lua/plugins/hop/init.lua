@@ -3,7 +3,7 @@ return {
 	keys = function()
 		return {
 			{
-				'<CR>',
+				'<m-cr>',
 				function()
 					require('hop').hint_words()
 				end,

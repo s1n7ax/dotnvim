@@ -25,10 +25,17 @@ local ls_to_exec_map = {
 
 return {
 	'neovim/nvim-lspconfig',
+	optional = false,
 	opts = function(_, opts)
 		local keys = require('lazyvim.plugins.lsp.keymaps').get()
-		keys[#keys + 1] = { 'K', false }
-		keys[#keys + 1] = { 'I', vim.lsp.buf.hover, desc = 'Hover' }
+
+		vim.list_extend(keys, {
+			-- add new record with value false to disable the existing keymap for lsp
+			-- keymaps
+			{ 'K', false },
+			{ '<a-n>', false },
+			{ 'I', vim.lsp.buf.hover, desc = 'Hover' },
+		})
 
 		opts.servers.emmet_language_server = {}
 		opts.servers.html = {}

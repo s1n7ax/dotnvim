@@ -15,10 +15,10 @@ wk.add({
 
 wk.add({
 	{ '', group = 'Split window' },
-	{ '<tab>m', window_util.split_left, desc = 'Split left' },
-	{ '<tab>n', window_util.split_bottom, desc = 'Split bottom' },
-	{ '<tab>e', window_util.split_top, desc = 'Split top' },
-	{ '<tab>i', window_util.split_right, desc = 'Split right' },
+	{ '<a-m>', window_util.split_left, desc = 'Split left' },
+	{ '<a-i>', window_util.split_right, desc = 'Split right' },
+	{ '<a-n>', window_util.split_bottom, desc = 'Split bottom' },
+	{ '<a-e>', window_util.split_top, desc = 'Split top' },
 })
 
 ----------------------------------------------------------------------

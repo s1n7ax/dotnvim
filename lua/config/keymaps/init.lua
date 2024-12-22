@@ -4,15 +4,6 @@
 
 local del_norm = {
 	{
-		mode = { 'n', 't' },
-		keymaps = {
-			-- '<c-h>',
-			-- '<c-j>',
-			-- '<c-k>',
-			-- '<c-l>',
-		},
-	},
-	{
 		mode = { 'n' },
 		keymaps = {
 			'<leader>wd',
