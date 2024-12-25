@@ -2,7 +2,6 @@ local list_util = require('utils.list')
 
 return {
 	'hrsh7th/nvim-cmp',
-	optional = true,
 	dependencies = {
 		'onsails/lspkind.nvim',
 	},
