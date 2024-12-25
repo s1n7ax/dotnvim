@@ -46,7 +46,7 @@ return {
 		},
 		winopts = {
 			preview = {
-				delay = 70,
+				delay = 10,
 			},
 		},
 		keymap = {

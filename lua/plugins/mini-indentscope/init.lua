@@ -1,5 +1,6 @@
 return {
 	'echasnovski/mini.indentscope',
+	optional = true,
 	opts = {
 		mappings = {
 			object_scope = '',

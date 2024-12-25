@@ -70,8 +70,13 @@ return {
 
 		local common_lang = {
 			augend.constant.new({
+				elements = { '<', '>' },
+				word = false,
+				cyclic = true,
+			}),
+			augend.constant.new({
 				elements = { '&&', '||' },
-				word = true,
+				word = false,
 				cyclic = true,
 			}),
 			augend.constant.new({
