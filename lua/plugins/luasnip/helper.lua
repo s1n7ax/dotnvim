@@ -20,12 +20,19 @@ function M.register_keymaps()
 	wk.add({
 		{
 			mode = { 'i', 's' },
+
+			-- when <C-i> is mapped to something, <Tab> default behaviour is shadowed
+			-- by the <C-i> mapping. To avoid this, we need to remap the <Tab> to be
+			-- itself
+			-- https://github.com/neovim/neovim/issues/20719
+			{ '<Tab>', '<Tab>', desc = 'Tab Space' },
+			{ '<c-i>', M.expand_or_jump(), desc = '(Snippet) Expand or jump' },
 			{
-				'<c-i>',
-				M.expand_or_jump('<tab>'),
-				desc = '(Snippet) Expand or jump',
-				expr = true,
+				'<c-m>',
+				M.jump_prev('<c-m>'),
+				desc = '(Snippet) Jump prev placeholder',
 			},
+			{ '<c-l>', M.change_choice('<c-l>'), desc = '(Snippet) Change choice' },
 		},
 	})
 
@@ -34,16 +41,31 @@ function M.register_keymaps()
 	})
 end
 
-function M.expand_or_jump(fallback)
+function M.expand_or_jump(--[[_fallback_key]])
 	return function()
 		if ls.expand_or_jumpable() then
-			vim.schedule(function()
-				ls.expand_or_jump()
-			end)
-			return true
+			ls.expand_or_jump()
 		end
+	end
+end
 
-		return fallback
+function M.jump_prev(fallback_key)
+	return function()
+		if ls.jumpable(-1) then
+			ls.jump(-1)
+		else
+			vim.api.nvim_input(fallback_key)
+		end
+	end
+end
+
+function M.change_choice(fallback_key)
+	return function()
+		if ls.choice_active() then
+			ls.change_choice(1)
+		else
+			vim.api.nvim_input(fallback_key)
+		end
 	end
 end
 
