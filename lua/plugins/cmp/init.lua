@@ -46,25 +46,21 @@ return {
 		local custom_sources = {
 			{
 				name = 'nvim_lsp_signature_help',
-				max_item_count = 3,
 				priority = 100,
 				group_index = 1,
 			},
 			{
 				name = 'nvim_lsp',
-				max_item_count = 3,
 				priority = 100,
 				group_index = 1,
 			},
 			{
 				name = 'nvim_lua',
-				max_item_count = 3,
 				priority = 100,
 				group_index = 1,
 			},
 			{
 				name = 'path',
-				max_item_count = 3,
 				priority = 90,
 				group_index = 1,
 			},
