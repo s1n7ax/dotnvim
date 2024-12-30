@@ -17,6 +17,7 @@ return {
 			position = 'float',
 		},
 		filesystem = {
+			group_empty_dirs = true,
 			window = {
 				mappings = {
 					['/'] = 'noop',
