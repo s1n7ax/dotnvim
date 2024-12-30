@@ -2,11 +2,18 @@ local list_util = require('utils.list')
 
 return {
 	'hrsh7th/nvim-cmp',
+	optional = true,
 	dependencies = {
 		'onsails/lspkind.nvim',
 	},
 	opts = function(_, opts)
 		local cmp = require('cmp')
+
+		opts.snippet = {
+			expand = function(args)
+				require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			end,
+		}
 
 		opts.experimental.ghost_text = false
 
