@@ -8,8 +8,7 @@ local keys = {
 
 return {
 	'karb94/neoscroll.nvim',
-	-- snacks.scroll replaces the this plugin
-	optional = true,
+	enabled = true,
 	keys = keys,
 	opts = {
 		easing = 'quadratic',

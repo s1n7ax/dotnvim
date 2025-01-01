@@ -23,6 +23,9 @@ vim.g.omni_sql_no_default_maps = false
 
 vim.g.lazyvim_cmp = 'nvim-cmp'
 
+-- disable annoying animations
+vim.g.snacks_animate = false
+
 if vim.g.neovide then
 	vim.o.guifont = 'Maple Mono NF:h17'
 	vim.opt.linespace = 0

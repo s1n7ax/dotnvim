@@ -38,7 +38,7 @@ local dashboard = {
 
 return {
 	'folke/snacks.nvim',
-	optional = true,
+	enabled = true,
 	opts = {
 		dashboard = dashboard,
 		bigfile = { enabled = true },
