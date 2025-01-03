@@ -17,13 +17,18 @@ return {
 	'ThePrimeagen/harpoon',
 	optional = true,
 	keys = function()
-		return {
+		local keys = {
 			{ ',l', mode = 'n', add_file, desc = 'Harpoon Add File' },
 			{ ',L', mode = 'n', toggle_ui, desc = 'Harpoon Toggle UI' },
-			{ '<c-1>', mode = 'n', nav(1), desc = 'Harpoon Jump to 1st' },
-			{ '<c-2>', mode = 'n', nav(2), desc = 'Harpoon Jump to 2nd' },
-			{ '<c-3>', mode = 'n', nav(3), desc = 'Harpoon Jump to 3rd' },
-			{ '<c-4>', mode = 'n', nav(4), desc = 'Harpoon Jump to 4rd' },
 		}
+
+		for i = 1, 5 do
+			table.insert(
+				keys,
+				{ '<c-' .. i .. '>', nav(i), desc = 'Harpoon Jump to File ' .. i }
+			)
+		end
+
+		return keys
 	end,
 }
