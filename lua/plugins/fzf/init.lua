@@ -32,6 +32,8 @@ return {
 		},
 	},
 	opts = {
+		files = { formatter = 'path.filename_first' },
+
 		previewers = {
 			builtin = {
 				-- disable treesitter for files bigger than 100KB
@@ -44,11 +46,14 @@ return {
 			stat_file = true,
 			include_current_session = true,
 		},
+
 		winopts = {
 			preview = {
 				delay = 10,
+				layout = 'vertical',
 			},
 		},
+
 		keymap = {
 			fzf = {
 				['ctrl-e'] = 'up',
