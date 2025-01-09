@@ -54,6 +54,12 @@ return {
 			},
 		},
 
+		grep = {
+			actions = {
+				['ctrl-g'] = { require('fzf-lua.actions').toggle_ignore },
+			},
+		},
+
 		keymap = {
 			fzf = {
 				['ctrl-e'] = 'up',
