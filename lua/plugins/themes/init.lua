@@ -16,7 +16,6 @@ local colorschemes = {
 	{
 		'rose-pine/neovim',
 		name = 'rose-pine',
-		opts = { highlight_groups = { Visual = { bg = '#373267' } } },
 	},
 	{
 		'folke/tokyonight.nvim',
