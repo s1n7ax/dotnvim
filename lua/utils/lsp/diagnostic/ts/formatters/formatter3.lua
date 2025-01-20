@@ -10,7 +10,7 @@ function M:new(args)
 	self.__index = self
 
 	o.pattern =
-		".*Type '(.+)' is missing the following properties from type '(.+)': (.+)"
+		".*Type '(.-)' is missing the following properties from type '(.-)'"
 	o.stringify = args.stringify
 	o.parser = args.parser
 
@@ -22,7 +22,7 @@ end
 ---@return string
 function M:format(message)
 	local clean_message = string.gsub(message, '\n', '')
-	local org_type, exp_type, missing_keys = clean_message:match(self.pattern)
+	local org_type, exp_type = clean_message:match(self.pattern)
 
 	org_type = 'type Org = ' .. org_type:gsub('%.%.%. %d+ more %.%.%.;%s+', '')
 	exp_type = 'type Exp = ' .. exp_type:gsub('%.%.%. %d+ more %.%.%.;%s+', '')
@@ -30,18 +30,16 @@ function M:format(message)
 	local actual = self.stringify.stringify(self.parser.parse(org_type)[1])
 	local expected = self.stringify.stringify(self.parser.parse(exp_type)[1])
 
-	vim.print('***********************')
-
 	return string.format(
 		[[
-Missing following properties
+Actual
 %s
 
-# From
+# Expected
 %s
 ]],
-		missing_keys,
-		actual
+		actual,
+		expected
 	)
 end
 

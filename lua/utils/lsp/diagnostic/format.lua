@@ -35,7 +35,7 @@ local formatters = {
 local format_diagnostics = function(diagnostic)
 	local message = diagnostic.message
 
-	if diagnostic.source == 'ts' and diagnostic.code == 2322 then
+	if diagnostic.source == 'ts' then
 		for _, formatter in ipairs(formatters) do
 			local match = message:match(formatter.pattern)
 
@@ -47,10 +47,10 @@ local format_diagnostics = function(diagnostic)
 				if ok then
 					return result
 				end
-
-				return message
 			end
 		end
+
+		return message
 	else
 		return message
 	end
