@@ -14,14 +14,14 @@ vim.o.termguicolors = true
 vim.o.foldlevel = 1000
 vim.o.signcolumn = 'yes:2'
 
-vim.diagnostic.config({
-	virtual_text = false,
-	float = {
-		format = function(diagnostic)
-			return format(diagnostic)
-		end,
-	},
-})
+-- vim.diagnostic.config({
+-- 	virtual_text = false,
+-- 	float = {
+-- 		format = function(diagnostic)
+-- 			return format(diagnostic)
+-- 		end,
+-- 	},
+-- })
 
 -- I'm using nixos so mason executables are not working.
 -- By default mason will not be used to install some of the packages
