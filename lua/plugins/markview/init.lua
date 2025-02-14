@@ -11,7 +11,9 @@ return {
 
 			return {
 				checkboxes = presets.checkboxes.nerd,
-				headings = presets.headings.marker,
+				markdown = {
+					headings = presets.headings.marker,
+				},
 			}
 		end,
 	},
