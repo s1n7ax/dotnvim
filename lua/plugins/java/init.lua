@@ -62,6 +62,11 @@ return {
 								dap = false,
 							},
 						})
+
+						require('lspconfig').jdtls.setup({})
+
+						-- return true will skip mason-lspconfig from setting up jdtls
+						return true
 					end,
 				},
 			},
