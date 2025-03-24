@@ -47,5 +47,36 @@ return {
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		scope = { enabled = false },
+		picker = {
+			sources = {
+				explorer = {
+					auto_close = true,
+					layout = {
+						preset = 'select',
+						layout = {
+							width = 0.8,
+							height = 0.8,
+						},
+					},
+					win = {
+						input = {
+							keys = {
+								['<c-n>'] = { 'list_down', mode = { 'i', 'n' } },
+								['<c-e>'] = { 'list_up', mode = { 'i', 'n' } },
+							},
+						},
+						list = {
+							keys = {
+								['n'] = 'list_down',
+								['e'] = 'list_up',
+								['<c-c>'] = 'close',
+								['<c-q>'] = 'close',
+								['h'] = 'focus_input',
+							},
+						},
+					},
+				},
+			},
+		},
 	},
 }
