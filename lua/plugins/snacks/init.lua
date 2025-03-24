@@ -50,6 +50,13 @@ return {
 		picker = {
 			sources = {
 				explorer = {
+					win = {
+						list = {
+							keys = {
+								['h'] = 'focus_input',
+							},
+						},
+					},
 					auto_close = true,
 					layout = {
 						preset = 'select',
@@ -58,22 +65,23 @@ return {
 							height = 0.8,
 						},
 					},
-					win = {
-						input = {
-							keys = {
-								['<c-n>'] = { 'list_down', mode = { 'i', 'n' } },
-								['<c-e>'] = { 'list_up', mode = { 'i', 'n' } },
-							},
-						},
-						list = {
-							keys = {
-								['n'] = 'list_down',
-								['e'] = 'list_up',
-								['<c-c>'] = 'close',
-								['<c-q>'] = 'close',
-								['h'] = 'focus_input',
-							},
-						},
+				},
+			},
+
+			win = {
+				input = {
+					keys = {
+						['<c-n>'] = { 'list_down', mode = { 'i', 'n' } },
+						['<c-e>'] = { 'list_up', mode = { 'i', 'n' } },
+					},
+				},
+				list = {
+					keys = {
+						['n'] = 'list_down',
+						['e'] = 'list_up',
+						['<c-c>'] = 'close',
+						['<c-q>'] = 'close',
+						['h'] = 'focus_input',
 					},
 				},
 			},
