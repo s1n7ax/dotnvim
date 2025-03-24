@@ -38,7 +38,16 @@ local dashboard = {
 
 return {
 	'folke/snacks.nvim',
-	enabled = true,
+	optional = true,
+	keys = {
+		{
+			',,',
+			function()
+				require('snacks').picker.smart()
+			end,
+			desc = 'Smart Find Files',
+		},
+	},
 	opts = {
 		dashboard = dashboard,
 		bigfile = { enabled = true },
