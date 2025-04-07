@@ -2,7 +2,7 @@ local f = require('utils.file').is_pkg_dir
 
 return {
 	'nvim-java/nvim-java',
-	enabled = true,
+	enabled = false,
 	dir = f('~/Workspace/nvim-java'),
 	config = false,
 	dependencies = {
