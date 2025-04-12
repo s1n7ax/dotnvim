@@ -1,6 +1,6 @@
 return {
 	'stevearc/conform.nvim',
-	event = 'LazyFile',
+	optional = true,
 	opts = function(_, opts)
 		opts.formatters_by_ft['nix'] = { 'nixfmt' }
 
