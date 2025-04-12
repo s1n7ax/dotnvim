@@ -32,6 +32,7 @@ vim.g.use_mason_for_ls = false
 vim.g.omni_sql_no_default_maps = false
 
 vim.g.lazyvim_cmp = 'nvim-cmp'
+vim.g.lazyvim_eslint_auto_format = true
 
 -- disable annoying animations
 vim.g.snacks_animate = false
