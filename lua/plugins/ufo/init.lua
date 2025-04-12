@@ -1,6 +1,6 @@
 return {
 	'kevinhwang91/nvim-ufo',
-	optional = true,
+	enabled = true,
 	dependencies = 'kevinhwang91/promise-async',
 	event = 'LspAttach',
 	keys = function()

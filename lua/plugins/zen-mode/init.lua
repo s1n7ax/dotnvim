@@ -1,5 +1,6 @@
 return {
 	'folke/zen-mode.nvim',
+	optional = true,
 	keys = {
 		{
 			',a',

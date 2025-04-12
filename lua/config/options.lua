@@ -1,4 +1,5 @@
 local format = require('utils.lsp.diagnostic.format')
+
 vim.opt.listchars = {
 	nbsp = '+',
 	tab = '> ',
