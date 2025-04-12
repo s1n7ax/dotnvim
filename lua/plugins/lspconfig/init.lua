@@ -43,8 +43,8 @@ return {
 		-- I'm using nix so some executables installed through mason is not working
 		-- Following will disable the mason installation for some packages
 		if not vim.g.use_mason_for_ls then
-			for server, _ in pairs(ls_to_exec_map) do
-				if opts.servers[server] then
+			for server, server_exe_name in pairs(ls_to_exec_map) do
+				if opts.servers[server] and vim.fn.executable(server_exe_name) then
 					opts.servers[server].mason = false
 				end
 			end
