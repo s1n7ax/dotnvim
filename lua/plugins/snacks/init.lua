@@ -73,5 +73,13 @@ return {
 				},
 			},
 		},
+
+		---@class snacks.zen.Config
+		zen = {
+			toggles = {
+				dim = false,
+			},
+			win = { style = 'zen', width = 100 },
+		},
 	},
 }

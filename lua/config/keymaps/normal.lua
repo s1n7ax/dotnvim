@@ -11,6 +11,13 @@ wk.add({
 	{ '<c-m>', '<c-w>h', desc = 'Jump to left window' },
 	{ '<c-n>', '<c-w>j', desc = 'Jump to below window' },
 	{ '<c-w><c-w>', '<c-w>p', desc = 'Jump to last window' },
+	{
+		',a',
+		function()
+			require('snacks').zen()
+		end,
+		desc = 'Toggle Zen Mode',
+	},
 })
 
 wk.add({
