@@ -25,7 +25,8 @@ wk.add({
 --                             Editing                              --
 ----------------------------------------------------------------------
 wk.add({
-	{ '<C-q>', '<cmd>confirm q<cr>', desc = 'Quit' },
+	{ '<C-q>', '<cmd>confirm q<cr>', desc = 'Close Window' },
+	{ '<C-s-q>', '<cmd>tabclose<cr>', desc = 'Close Tab' },
 	{ '<C-s>', '<cmd>silent w<cr>', desc = 'Save' },
 	{ '<leader><cr>', 'a<cr><esc>', desc = 'Line Break' },
 	{
