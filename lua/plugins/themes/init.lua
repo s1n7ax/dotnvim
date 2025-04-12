@@ -5,13 +5,6 @@ local colorschemes = {
 	{
 		'catppuccin/nvim',
 		name = 'catppuccin',
-		opts = {
-			custom_highlights = function()
-				return {
-					Visual = { bg = '#373267' },
-				}
-			end,
-		},
 	},
 	{
 		'rose-pine/neovim',

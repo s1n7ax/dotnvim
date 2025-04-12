@@ -1,6 +1,6 @@
 return {
 	'saghen/blink.cmp',
-	enabled = false,
+	optional = true,
 	opts = {
 		signature = { enabled = true },
 		sources = {
