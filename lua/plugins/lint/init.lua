@@ -1,6 +1,6 @@
 return {
 	'mfussenegger/nvim-lint',
-	event = 'VeryLazy',
+	optional = true,
 	opts = {
 		linters_by_ft = {
 			lua = { 'luacheck' },
