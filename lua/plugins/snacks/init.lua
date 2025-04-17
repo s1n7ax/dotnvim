@@ -18,7 +18,6 @@ return {
 				require('snacks').picker.explorer({
 					hidden = true,
 					ignored = true,
-					follow = true,
 				})
 			end,
 			desc = 'Smart Find Files',
@@ -28,7 +27,7 @@ return {
 			function()
 				require('snacks').picker.grep({
 					hidden = true,
-					follow = true,
+					ignored = false,
 				})
 			end,
 			desc = 'Smart Find Files',
@@ -38,8 +37,7 @@ return {
 			function()
 				require('snacks').picker.smart({
 					hidden = true,
-					ignored = true,
-					follow = true,
+					ignored = false,
 				})
 			end,
 			desc = 'Smart Find Files',
