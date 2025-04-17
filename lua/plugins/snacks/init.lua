@@ -13,9 +13,34 @@ return {
 	optional = true,
 	keys = {
 		{
+			'<leader>e',
+			function()
+				require('snacks').picker.explorer({
+					hidden = true,
+					ignored = true,
+					follow = true,
+				})
+			end,
+			desc = 'Smart Find Files',
+		},
+		{
+			'<leader>/',
+			function()
+				require('snacks').picker.grep({
+					hidden = true,
+					follow = true,
+				})
+			end,
+			desc = 'Smart Find Files',
+		},
+		{
 			',,',
 			function()
-				require('snacks').picker.smart()
+				require('snacks').picker.smart({
+					hidden = true,
+					ignored = true,
+					follow = true,
+				})
 			end,
 			desc = 'Smart Find Files',
 		},
@@ -79,7 +104,12 @@ return {
 			toggles = {
 				dim = false,
 			},
-			win = { style = 'zen', width = 100 },
+			win = {
+				style = {
+					backdrop = { transparent = false },
+				},
+				width = 100,
+			},
 		},
 	},
 }
