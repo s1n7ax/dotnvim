@@ -44,7 +44,7 @@ return {
 		-- Following will disable the mason installation for some packages
 		if not vim.g.use_mason_for_ls then
 			for server, server_exe_name in pairs(ls_to_exec_map) do
-				if opts.servers[server] and vim.fn.executable(server_exe_name) then
+				if opts.servers[server] and vim.fn.executable(server_exe_name) == 1 then
 					opts.servers[server].mason = false
 				end
 			end
