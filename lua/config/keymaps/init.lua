@@ -10,6 +10,13 @@ local del_norm = {
 			'<leader>wm',
 		},
 	},
+	{
+		mode = { 's' },
+		keymaps = {
+			'<tab>',
+			'<s-tab>',
+		},
+	},
 }
 
 for _, rule in ipairs(del_norm) do
