@@ -15,41 +15,27 @@ return {
 			dir = f('~/Workspace/nvim-ts-utils'),
 		},
 	},
-	keys = {
-		{ '<Tab>', '<Tab>', desc = 'Tab Space', mode = { 'i', 's' } },
-		{ '<s-Tab>', '<s-Tab>', desc = 'Shift Tab Space', mode = { 'i', 's' } },
-		{
-			'<c-i>',
-			helper.expand_or_jump(),
-			desc = '(Snippet) Expand or jump',
-			mode = { 'i', 's' },
-		},
-		{
-			'<c-m>',
-			helper.jump_prev('<c-m>'),
-			desc = '(Snippet) Jump prev placeholder',
-			mode = { 'i', 's' },
-		},
-		{
-			'<c-l>',
-			helper.change_choice('<c-l>'),
-			desc = '(Snippet) Change choice',
-			mode = { 'i', 's' },
-		},
-		{
-			'<c-m>',
-			helper.jump_prev('<c-m>'),
-			desc = '(Snippet) Jump prev placeholder',
-			mode = { 'i', 's' },
-		},
-		{
-			'<c-l>',
-			helper.change_choice('<c-l>'),
-			desc = '(Snippet) Change choice',
-			mode = { 'i', 's' },
-		},
-	},
+	keys = function()
+		-- stylua: ignore
+		return {
+			-- { '<Tab>', '<Tab>', desc = 'Tab Space', mode = { 'i', 's' } },
+			-- { '<s-Tab>', '<s-Tab>', desc = 'Shift Tab Space', mode = { 'i', 's' } },
+			{ '<c-i>', helper.expand_or_jump(), desc = '(Snippet) Expand or jump', mode = {'i', 's' } },
+			{ '<c-m>', helper.jump_prev(), desc = '(Snippet) Jump prev placeholder', mode = { 's' } },
+			{ '<c-l>', helper.change_choice(), desc = '(Snippet) Change choice', mode = { 'i', 's' } },
+		}
+	end,
 	config = function()
 		helper.register_snippets()
 	end,
+	specs = {
+		{
+			'saghen/blink.cmp',
+			opts = {
+				keymap = {
+					['<cr>'] = { 'select_and_accept', helper.jump_prev(), 'fallback' },
+				},
+			},
+		},
+	},
 }

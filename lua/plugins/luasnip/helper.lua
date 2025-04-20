@@ -1,4 +1,5 @@
 local config = require('plugins.luasnip.config')
+local ls = require('luasnip')
 
 local M = {}
 
@@ -14,40 +15,41 @@ function M.register_snippets()
 	end
 end
 
-function M.expand_or_jump(--[[_fallback_key]])
+function M.expand_or_jump()
 	return function()
-		local ls = require('luasnip')
-		if ls.expand_or_jumpable() then
-			ls.expand_or_jump()
+		if ls.expand_or_locally_jumpable() then
+			vim.schedule(function()
+				ls.expand_or_jump(1)
+			end)
+			return true
 		end
 	end
 end
 
-function M.jump_prev(fallback_key)
+function M.jump_prev()
 	return function()
-		local ls = require('luasnip')
 		if ls.jumpable(-1) then
-			ls.jump(-1)
-		else
-			vim.api.nvim_input(fallback_key)
+			vim.schedule(function()
+				ls.jump(-1)
+			end)
+			return true
 		end
 	end
 end
 
-function M.change_choice(fallback_key)
+function M.change_choice()
 	return function()
-		local ls = require('luasnip')
 		if ls.choice_active() then
-			ls.change_choice(1)
-		else
-			vim.api.nvim_input(fallback_key)
+			vim.schedule(function()
+				ls.change_choice(1)
+			end)
+			return true
 		end
 	end
 end
 
 function M.refresh_snips()
 	return function()
-		local ls = require('luasnip')
 		vim.notify('Refreshing lua snips')
 
 		local module_utils = require('utils.module')
