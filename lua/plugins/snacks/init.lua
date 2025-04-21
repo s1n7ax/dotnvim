@@ -35,7 +35,7 @@ return {
 		{
 			',,',
 			function()
-				require('snacks').picker.smart({
+				require('snacks').picker.files({
 					hidden = true,
 					ignored = false,
 				})
