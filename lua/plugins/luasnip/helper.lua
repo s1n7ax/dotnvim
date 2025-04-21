@@ -22,6 +22,12 @@ function M.expand_or_jump()
 				ls.expand_or_jump(1)
 			end)
 			return true
+		else
+			vim.api.nvim_feedkeys(
+				vim.api.nvim_replace_termcodes('<c-i>', true, false, true),
+				'n',
+				false
+			)
 		end
 	end
 end

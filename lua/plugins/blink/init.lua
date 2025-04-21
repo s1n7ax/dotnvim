@@ -1,8 +1,10 @@
 return {
 	'saghen/blink.cmp',
 	optional = true,
-	dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+	enabled = true,
+	-- dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
 	opts = {
+		snippets = { preset = 'luasnip' },
 		signature = { enabled = true },
 		sources = {
 			default = { 'lsp', 'path', 'buffer' },
@@ -17,6 +19,7 @@ return {
 
 		keymap = {
 			preset = 'none',
+			['<c-space>'] = { 'show' },
 			['<c-n>'] = { 'select_next', 'snippet_forward', 'fallback' },
 			['<c-e>'] = { 'select_prev', 'snippet_backward', 'fallback' },
 			['<cr>'] = { 'select_and_accept', 'fallback' },
