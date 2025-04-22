@@ -23,7 +23,7 @@ require('lazy').setup({
 		{
 			'LazyVim/LazyVim',
 			opts = {
-				colorscheme = 'rose-pine-moon',
+				colorscheme = 'gruvbox-material',
 				-- colorscheme = 'catppuccin-frappe',
 				-- colorscheme = 'tokyonight',
 				-- colorscheme = 'nord',
