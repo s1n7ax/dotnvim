@@ -13,8 +13,8 @@ return {
 			transform_items = function(_, items)
 				-- removes snippes from completion items
 				return vim.tbl_filter(function(item)
-					return item.kind
-						~= require('blink.cmp.types').CompletionItemKind.Snippet
+					local kind = require('blink.cmp.types').CompletionItemKind
+					return (item.kind ~= kind.Snippet and item.kind ~= kind.Copilot)
 				end, items)
 			end,
 		},

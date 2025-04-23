@@ -16,13 +16,4 @@ return {
 			help = true,
 		},
 	},
-	specs = {
-		'saghen/blink.cmp',
-		optional = true,
-		dependencies = {},
-		-- following disables the copilot source for blink
-		opts = function(_, opts)
-			return opts
-		end,
-	},
 }
