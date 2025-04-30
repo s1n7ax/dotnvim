@@ -4,6 +4,7 @@ return {
 	version = '*',
 	init = function()
 		local ignore_filetypes = {
+			'DiffviewFileHistory',
 			'OverseerList',
 			'dapui_scopes',
 			'dapui_breakpoints',
