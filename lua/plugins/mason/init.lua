@@ -6,7 +6,8 @@ local function binary_available(pkg)
 end
 
 return {
-	'williamboman/mason.nvim',
+	'mason-org/mason.nvim',
+	optional = true,
 	opts = function(_, opts)
 		opts.ensure_installed = vim.tbl_filter(function(pkg)
 			return binary_available(pkg)
