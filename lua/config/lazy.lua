@@ -26,8 +26,8 @@ require('lazy').setup({
 			opts = {
 				-- colorscheme = 'gruvbox-material',
 				-- colorscheme = 'catppuccin-frappe',
-				-- colorscheme = 'tokyonight',
-				colorscheme = 'nord',
+				colorscheme = 'tokyonight',
+				-- colorscheme = 'nord',
 			},
 			import = 'lazyvim.plugins',
 		},

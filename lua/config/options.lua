@@ -35,6 +35,7 @@ vim.g.lazyvim_eslint_auto_format = true
 
 -- disable annoying animations
 vim.g.snacks_animate = false
+vim.g.lazydev_enabled = true
 
 if vim.g.neovide then
 	vim.o.guifont = 'Maple Mono NF:h17'
