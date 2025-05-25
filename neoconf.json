@@ -13,7 +13,6 @@
   "lspconfig": {
     "lua_ls": {
       "Lua": {
-        "workspace.library": [],
         "format.enable": false,
         "semantic.enable": false,
         "workspace": {
