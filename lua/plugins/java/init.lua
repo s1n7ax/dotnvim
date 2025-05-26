@@ -2,36 +2,30 @@ local f = require('utils.file').is_pkg_dir
 
 return {
 	'nvim-java/nvim-java',
-	enabled = false,
-	dir = f('~/Workspace/nvim-java'),
+	enabled = true,
+	dir = f('~/Workspace/java/nvim-java'),
 	config = false,
 	dependencies = {
 		{
-			'JavaHello/spring-boot.nvim',
-			commit = '218c0c26c14d99feca778e4d13f5ec3e8b1b60f0',
-		},
-		{
-			'nvim-java/lua-async-await',
-			dir = f('~/Workspace/lua-async-await'),
+			'nvim-java/lua-async',
+			dir = f('~/Workspace/java/lua-async'),
 		},
 		{
 			'nvim-java/nvim-java-core',
-			dir = f('~/Workspace/nvim-java-core'),
+			dir = f('~/Workspace/java/nvim-java-core'),
 		},
 		{
 			'nvim-java/nvim-java-test',
-			dir = f('~/Workspace/nvim-java-test'),
+			dir = f('~/Workspace/java/nvim-java-test'),
 		},
 		{
 			'nvim-java/nvim-java-dap',
-			dir = f('~/Workspace/nvim-java-dap'),
+			dir = f('~/Workspace/java/nvim-java-dap'),
 		},
 		{
 			'nvim-java/nvim-java-refactor',
-			dir = f('~/Workspace/nvim-java-refactor'),
+			dir = f('~/Workspace/java/nvim-java-refactor'),
 		},
-		'MunifTanjim/nui.nvim',
-		'mfussenegger/nvim-dap',
 		{
 			'williamboman/mason.nvim',
 			opts = {
