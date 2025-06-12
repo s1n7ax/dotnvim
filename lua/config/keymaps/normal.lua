@@ -12,7 +12,7 @@ wk.add({
 	{ '<c-n>', '<c-w>j', desc = 'Jump to below window' },
 	{ '<c-w><c-w>', '<c-w>p', desc = 'Jump to last window' },
 	{
-		',a',
+		',z',
 		function()
 			require('snacks').zen()
 		end,
