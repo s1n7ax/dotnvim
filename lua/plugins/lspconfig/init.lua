@@ -21,12 +21,16 @@ local ls_to_exec_map = {
 	yamlls = 'yaml-language-server',
 	emmet_language_server = 'emmet-language-server',
 	html = 'vscode-html-language-server',
+	tsgo = 'tsgo',
 }
 
 return {
 	'neovim/nvim-lspconfig',
 	optional = false,
 	opts = function(_, opts)
+		-- enable native LSPs
+		vim.lsp.enable('tsgo')
+
 		local keys = require('lazyvim.plugins.lsp.keymaps').get()
 
 		vim.list_extend(keys, {
