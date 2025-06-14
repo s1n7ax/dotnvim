@@ -29,6 +29,15 @@ local colorschemes = {
 	{
 		'sainnhe/gruvbox-material',
 	},
+	{
+		'vague2k/vague.nvim',
+	},
+	{
+		'rebelot/kanagawa.nvim',
+	},
+	{
+		'thesimonho/kanagawa-paper.nvim',
+	},
 }
 
 for _, colorscheme in ipairs(colorschemes) do
