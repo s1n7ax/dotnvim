@@ -8,6 +8,7 @@ local del_norm = {
 		keymaps = {
 			'<leader>wd',
 			'<leader>wm',
+			'<leader><leader>',
 		},
 	},
 	-- {
