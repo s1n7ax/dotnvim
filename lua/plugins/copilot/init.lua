@@ -1,19 +1,22 @@
 return {
 	'zbirenbaum/copilot.lua',
 	optional = true,
-	enabled = true,
 	opts = {
+		panel = { enabled = false },
 		suggestion = {
 			enabled = true,
-			auto_trigger = true,
+			auto_trigger = false,
+			hide_during_completion = true,
+			debounce = 75,
+			trigger_on_accept = true,
 			keymap = {
-				accept = '<c-o>',
+				accept = '<C-o>',
+				accept_word = false,
+				accept_line = false,
+				next = false,
+				prev = false,
+				dismiss = false,
 			},
-		},
-		panel = { enabled = false },
-		filetypes = {
-			markdown = true,
-			help = true,
 		},
 	},
 }
