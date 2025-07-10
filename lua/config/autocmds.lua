@@ -36,3 +36,11 @@ vim.api.nvim_create_autocmd('UILeave', {
 		io.write('\027]111\027\\')
 	end,
 })
+
+-- autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+vim.api.nvim_create_autocmd('BufReadPost', {
+	pattern = { 'quickfix' },
+	callback = function()
+		vim.cmd('nnoremap <buffer> <CR> <CR>')
+	end,
+})
