@@ -33,6 +33,9 @@ vim.g.omni_sql_no_default_maps = false
 
 vim.g.lazyvim_eslint_auto_format = true
 
+-- Enable this option to avoid conflicts with Prettier and biome.
+vim.g.lazyvim_prettier_needs_config = true
+
 -- disable annoying animations
 vim.g.snacks_animate = false
 vim.g.lazydev_enabled = true
