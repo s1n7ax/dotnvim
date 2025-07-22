@@ -4,6 +4,13 @@ return {
 	keys = {
 		{ '<leader>r', '', desc = '+Rest' },
 		{
+			'<leader>ra',
+			function()
+				require('kulala').run_all()
+			end,
+			desc = 'Send the request',
+		},
+		{
 			'<leader>rs',
 			function()
 				require('kulala').run()
